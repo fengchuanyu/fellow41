@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1686469_ee6eraahxut.css">
+  <style>
+    /* css reset */
+    *{
+      margin: 0;
+      padding:0;
+    }
+    a{
+      text-decoration: none;
+    }
+    .container{
+      width: 1226px;
+      margin: 0 auto;
+    }
+    /* 顶部区域 */
+    .top-bar{
+      background-color: #333;
+      height: 40px;
+      color: #b0b0b0;
+      font-size: 12px;
+    }
+    .top-bar a{
+      color: #b0b0b0;
+      display: inline-block;
+      height: 40px;
+    }
+    .top-bar span{
+      margin: 0 5px;
+      color: #424242;
+    }
+    .top-bar .tb-left,.top-bar .tb-right{
+      height: 40px;
+      line-height: 40px;
+    }
+    .top-bar .tb-left{
+      float: left;
+    }
+    .top-bar .tb-left .download-app{
+      position: relative;
+    }
+    .top-bar .download-app:hover .appcode{
+      height: 160px;
+    }
+    .top-bar .download-app:hover .drop{
+      height: 160px;
+      display: block;
+    }
+    .top-bar .download-app .drop{
+      display: none;
+      position: absolute;
+      left: 50%;
+      margin-left: -8px;
+      bottom: 0;
+      border-width:8px;
+      border-color: transparent transparent #fff transparent;
+      border-style: solid;
+    }
+    .top-bar .tb-left .appcode{
+      width: 124px;
+      background-color: white;
+      box-shadow: 0 1px 5px #aaa;
+      position: absolute;
+      top:40px;
+      left: 50%;
+      margin-left: -62px;
+      text-align: center;
+      height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .top-bar .appcode img{
+      margin: 18px auto 12px;
+      display: block;
+    }
+    .top-bar .tb-right{
+      float: right;
+    }
+    .top-bar .tb-right .cart-bar{
+      display: inline-block;
+      height: 40px;
+      width: 120px;
+      background-color: #424242;
+      margin-left: 15px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-bar">
+    <div class="container">
+      <div class="tb-left">
+        <a href="javascript:void(0)">小米商城</a><span class="sep">|</span>
+        <a href="">MIUI</a><span class="sep">|</span>
+        <a href="">IoT</a><span class="sep">|</span>
+        <a href="">云服务</a><span class="sep">|</span>
+        <a href="">金融</a><span class="sep">|</span>
+        <a href="">有品</a><span class="sep">|</span>
+        <a href="">小爱开放平台</a><span class="sep">|</span>
+        <a href="">企业团购</a><span class="sep">|</span>
+        <a href="">资质证照</a><span class="sep">|</span>
+        <a href="">协议规则</a><span class="sep">|</span>
+        <a href="" class="download-app">
+          下载app
+          <span class="drop"></span>
+          <div class="appcode">
+              <img src="./img/download.png" alt="小米商城" width="90" height="90">
+              <span>小米商城APP</span>
+          </div>
+        </a><span class="sep">|</span>
+        <a href="">Select Location</a>
+      </div>
+      <div class="tb-right">
+        <a href="">登录</a><span class="sep">|</span>
+        <a href="">注册</a><span class="sep">|</span>
+        <a href="">消息通知</a>
+        <div class="cart-bar">
+          <a href="">
+            <i class="iconfont icon-cart"></i>
+            购物车(0)
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header"></div>
+  <div class="slider-bar"></div>
+  <div class="hero-hub"></div>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body{
+      margin:0;
+    }
+    .box{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      margin: 0 auto;
+      border:10px solid black;
+      padding:30px;
+      box-sizing: border-box; /*切换为怪异盒模型*/
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    标准盒模型 box-sizing: content-box
+    怪异盒模型 box-sizing: border-box
+   -->
+  <div class="box">
+    hello world!
+  </div>
+</body>
+</html>

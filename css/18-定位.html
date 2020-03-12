@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .box{
+      width: 500px;
+      height: 4000px;
+      border:1px solid black;
+      margin-top:20px;
+      margin-left:20px;
+      position: relative;
+    }
+    .div1{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      /* position: relative;
+      top:200px;
+      left:200px; */
+      /* position: absolute;
+      right: 0;
+      bottom: 0; */
+      position: absolute;
+      top:0;
+      left: 0;
+    }
+    .div2{
+      width: 210px;
+      height: 210px;
+      background-color: blue;
+    }
+    .div3{
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="div1"></div>
+    hello
+  </div>
+  <div class="div3">返回顶部</div>
+</body>
+</html>

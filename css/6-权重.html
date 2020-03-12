@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #box{
+      color: green;
+    }
+    .div1{
+      color: blue;
+    }
+    div{
+      font-size: 30px;
+      color: red !important;
+    }
+    *{
+      font-weight: bolder;
+    }
+    /* 
+      *(通配选择器)0 < 标签选择器1 < 类选择器10 < id选择器100 < 内联样式1000 < !important1000
+     */
+
+     div .span1{
+       color: aquamarine;
+     }
+     .span1{
+       color: blue;
+     }
+     
+  </style>
+</head>
+<body>
+  <div class="div1" id="box" style="color: hotpink">hello world</div>
+  <div class="p1">
+    <span class="span1" id="box2">fellow37</span>
+  </div>
+</body>
+</html>

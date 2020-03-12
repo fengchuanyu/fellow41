@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    li{
+      width: 100px;
+      height: 100px;
+      background-color: aquamarine;
+      list-style: none;
+      float: right;
+    }
+    .box div{
+      width: 100px;
+      height: 100px;
+      background-color: aquamarine;
+      float: left;
+    }
+    p{
+      clear: both;
+    }
+    .clearfix::after{
+      content: "";
+      clear: both;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    浮动元素会脱离文档流 会导致父元素高度塌陷
+   -->
+  <ul class="clearfix">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <div class="box clearfix">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </div>
+  hello world
+</body>
+</html>

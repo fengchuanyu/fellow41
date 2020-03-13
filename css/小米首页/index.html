@@ -6,69 +6,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1686469_ee6eraahxut.css">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1686469_wkedzng163f.css">
   <style>
     /* css reset */
-    *{
+    * {
       margin: 0;
-      padding:0;
+      padding: 0;
     }
-    a{
+
+    a {
       text-decoration: none;
     }
-    .container{
+
+    .container {
       width: 1226px;
       margin: 0 auto;
     }
+
+    .clearfix::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    li{
+      list-style: none;
+    }
+    body {
+      font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+    }
+
     /* 顶部区域 */
-    .top-bar{
+    .top-bar {
       background-color: #333;
       height: 40px;
       color: #b0b0b0;
       font-size: 12px;
     }
-    .top-bar a{
+
+    .top-bar a {
       color: #b0b0b0;
       display: inline-block;
       height: 40px;
     }
-    .top-bar span{
+
+    .top-bar span {
       margin: 0 5px;
       color: #424242;
     }
-    .top-bar .tb-left,.top-bar .tb-right{
+
+    .top-bar .tb-left,
+    .top-bar .tb-right {
       height: 40px;
       line-height: 40px;
     }
-    .top-bar .tb-left{
+
+    .top-bar .tb-left {
       float: left;
     }
-    .top-bar .tb-left .download-app{
+
+    .top-bar .tb-left .download-app {
       position: relative;
     }
-    .top-bar .download-app:hover .appcode{
+
+    .top-bar .download-app:hover .appcode {
       height: 160px;
     }
-    .top-bar .download-app:hover .drop{
+
+    .top-bar .download-app:hover .drop {
       height: 160px;
       display: block;
     }
-    .top-bar .download-app .drop{
+
+    .top-bar .download-app .drop {
       display: none;
       position: absolute;
       left: 50%;
       margin-left: -8px;
       bottom: 0;
-      border-width:8px;
+      border-width: 8px;
       border-color: transparent transparent #fff transparent;
       border-style: solid;
     }
-    .top-bar .tb-left .appcode{
+
+    .top-bar .tb-left .appcode {
       width: 124px;
       background-color: white;
       box-shadow: 0 1px 5px #aaa;
       position: absolute;
-      top:40px;
+      top: 40px;
       left: 50%;
       margin-left: -62px;
       text-align: center;
@@ -76,20 +101,262 @@
       overflow: hidden;
       transition: all 0.3s ease;
     }
-    .top-bar .appcode img{
+
+    .top-bar .appcode img {
       margin: 18px auto 12px;
       display: block;
     }
-    .top-bar .tb-right{
+
+    .top-bar .tb-right {
       float: right;
     }
-    .top-bar .tb-right .cart-bar{
+
+    .top-bar .tb-right .cart-bar {
       display: inline-block;
       height: 40px;
       width: 120px;
       background-color: #424242;
       margin-left: 15px;
       text-align: center;
+      position: relative;
+    }
+
+    .top-bar .tb-right .cart-menu {
+      position: absolute;
+      top: 40px;
+      right: 0;
+      width: 316px;
+      height: 0;
+      line-height: 100px;
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .15);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .top-bar .tb-right .cart-bar:hover {
+      background-color: #fff;
+
+    }
+
+    .top-bar .cart-bar:hover a {
+      color: #ff6700;
+    }
+
+    .top-bar .cart-bar:hover .cart-menu {
+      height: 100px;
+    }
+
+    /* header start */
+    .header .header-logo {
+      width: 62px;
+      height: 55px;
+      margin-top: 22px;
+      float: left;
+    }
+
+    .header .header-logo .logo {
+      position: relative;
+      width: 55px;
+      height: 55px;
+      background-color: #ff6700;
+      overflow: hidden;
+    }
+
+    .header .header-logo .logo::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      display: block;
+      width: 55px;
+      height: 55px;
+      background-image: url("./img/mi-home.png");
+      background-position: center;
+      transform: translateX(-100%);
+      transition: all 0.1s linear;
+    }
+
+    .header .header-logo .logo:hover::after {
+      transform: translateX(0);
+    }
+
+    .header .header-logo .logo::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      display: block;
+      width: 55px;
+      height: 55px;
+      background-image: url("./img/mi-logo.png");
+      background-position: center;
+      transition: all 0.1s linear;
+    }
+
+    .header .header-logo .logo:hover::before {
+      transform: translateX(100%)
+    }
+
+    .header .header-nav {
+      width: 620px;
+      float: left;
+      height: 88px;
+      margin: 0;
+      padding: 12px 0 0 180px;
+      font-size: 16px;
+    }
+
+    .header .header-nav li {
+      float: left;
+      list-style: none;
+      padding: 26px 10px 38px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .header .header-nav li:hover {
+      color: #ff6700;
+    }
+
+    .header .header-search {
+      width: 296px;
+      height: 50px;
+      margin-top: 25px;
+      float: right;
+      border: 1px solid #e0e0e0;
+      position: relative;
+    }
+
+    .header-search .hs-text {
+      position: absolute;
+      top: 14px;
+      right: 62px;
+    }
+
+    .header-search .hs-text span {
+      margin-left: 5px;
+      padding: 0 5px;
+      font-size: 12px;
+      background: #eee;
+      color: #757575;
+      transition: all 0.1s ease;
+      cursor: pointer;
+    }
+
+    .header-search .hs-text span:hover {
+      color: #fff;
+      background-color: #ff6700;
+    }
+
+    .header-search input {
+      display: block;
+      float: left;
+      width: 223px;
+      height: 48px;
+      padding: 0 10px;
+      font-size: 14px;
+      line-height: 48px;
+      border: 0;
+      outline: none;
+    }
+
+    .header-search button {
+      display: block;
+      float: left;
+      width: 52px;
+      height: 50px;
+      line-height: 24px;
+      color: #616161;
+      background-color: rgba(0, 0, 0, 0);
+      border-width: 0 0 0 1px;
+      border-color: #e0e0e0;
+      border-style: solid;
+    }
+
+    .header-search button i {
+      font-size: 24px;
+      font-weight: bolder;
+    }
+
+    /* slider-bar start */
+    .slider-bar {
+      position: relative;
+    }
+
+    .slider-bar .slider-nav {
+      width: 234px;
+      height: 460px;
+      background: rgba(105,101,101,.6);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+    .slider-bar .slider-nav ul{
+      padding: 20px 0;
+    }
+    .slider-bar .slider-nav li{
+      padding-left: 30px;
+      height: 42px;
+      line-height: 42px;
+      color: #fff;
+      position: relative;
+      cursor: pointer;
+    }
+    .slider-bar .slider-nav li:hover{
+      background-color: #ff6700;
+    }
+    .slider-bar .slider-nav i{
+      position: absolute;
+      right: 20px;
+      top:0;
+    }
+    .slider-bar .slider-img {
+      width: 1226px;
+      height: 460px;
+      background-color: blue;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .slider-bar .si-img{
+      position: absolute
+    }
+    .slider-bar .si-arr{
+      position: absolute;
+      width: 992px;
+      left: 234px;
+      top:50%;
+      transform: translateY(-50%);
+    }
+    .slider-bar .si-arr .sia-left,.slider-bar .si-arr .sia-right{
+      width: 41px;
+      height: 69px;
+      text-align: center;
+      line-height: 69px;
+      cursor: pointer;
+    }
+    .slider-bar .sia-left:hover,.slider-bar .sia-right:hover{
+      background-color: rgba(0,0,0,.7);
+    }
+    .slider-bar .sia-left:hover i,.slider-bar .sia-right:hover i{
+      color: #fff;
+    }
+    .slider-bar .sia-left i,.slider-bar .sia-right i{
+      font-size: 30px;
+      color: #aaa;
+    }
+    .slider-bar .si-arr .sia-left{
+      float: left;
+      border-radius: 0 5px 5px 0;
+    }
+    .slider-bar .si-arr .sia-right{
+      float: right;
+      border-radius: 5px 0 0 5px;
+    }
+    .slider-bar .si-bullets{
+      position: absolute
     }
   </style>
 </head>
@@ -112,8 +379,8 @@
           下载app
           <span class="drop"></span>
           <div class="appcode">
-              <img src="./img/download.png" alt="小米商城" width="90" height="90">
-              <span>小米商城APP</span>
+            <img src="./img/download.png" alt="小米商城" width="90" height="90">
+            <span>小米商城APP</span>
           </div>
         </a><span class="sep">|</span>
         <a href="">Select Location</a>
@@ -127,12 +394,70 @@
             <i class="iconfont icon-cart"></i>
             购物车(0)
           </a>
+          <div class="cart-menu">
+            <span>购物车中还没有商品，赶紧选购吧！</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="header"></div>
-  <div class="slider-bar"></div>
+  <div class="header container clearfix">
+    <div class="header-logo">
+      <div class="logo"></div>
+    </div>
+    <div class="header-nav">
+      <ul>
+        <li>小米手机</li>
+        <li>Redmi 红米</li>
+        <li>电视</li>
+        <li>笔记本</li>
+        <li>家电</li>
+        <li>路由器</li>
+        <li>智能硬件</li>
+        <li>服务</li>
+        <li>社区</li>
+      </ul>
+    </div>
+    <div class="header-search">
+      <div class="hs-text">
+        <span>小米9 Pro 5G</span>
+        <span>Redmi Note 8</span>
+      </div>
+      <input type="text">
+      <button><i class="iconfont icon-Search"></i></button>
+    </div>
+  </div>
+  <div class="slider-bar container">
+    <div class="slider-nav">
+      <ul>
+        <li>手机 电话卡<i class="iconfont icon-arrow"></i></li>
+        <li>电视 盒子 <i class="iconfont icon-arrow"></i></li>
+        <li>笔记本 显示器 平板 <i class="iconfont icon-arrow"></i></li>
+        <li>家电 插线板 <i class="iconfont icon-arrow"></i></li>
+        <li>出行 穿戴 <i class="iconfont icon-arrow"></i></li>
+        <li>智能 路由器 <i class="iconfont icon-arrow"></i></li>
+        <li>电源 配件 <i class="iconfont icon-arrow"></i></li>
+        <li>健康 儿童 <i class="iconfont icon-arrow"></i></li>
+        <li>耳机 音箱 <i class="iconfont icon-arrow"></i></li>
+        <li>生活 箱包 <i class="iconfont icon-arrow"></i></li>
+      </ul>
+    </div>
+    <div class="slider-img">
+      <div class="si-img">
+        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6bd4174b8c5aad67a64864a5716ad152.jpg?thumb=1&w=1226&h=460&f=webp&q=90" alt="" srcset="">
+      </div>
+      <div class="si-arr">
+        <div class="sia-left"><i class="iconfont icon-arrow1"></i></div>
+        <div class="sia-right"><i class="iconfont icon-arrow"></i></div>
+      </div>
+      <div class="si-bullets">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
   <div class="hero-hub"></div>
 </body>
 

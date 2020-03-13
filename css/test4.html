@@ -7,28 +7,27 @@
   <title>Document</title>
   <style>
     .box{
-      border: 1px solid black;
-      height: 400px;
       width: 400px;
+      height: 400px;
+      border: 1px solid black;
       position: relative;
     }
     .div1{
+      /* width: 200px;
+      height: 200px; */
       background-color: red;
       position: absolute;
-      top: 50%;
-      left:50%;
+      top:50%;
+      left: 50%;
+      /* margin-left: -100px;
+      margin-top:-100px; */
       transform: translate(-50%,-50%);
-      /* transform: translateX(20px);
-      transform: translateY(30px); */
-      /* transform: translate(20px,40px) */
     }
   </style>
 </head>
 <body>
   <div class="box">
-    <span class="div1">
-      hello world
-    </span>
+    <span class="div1">hello</span>
   </div>
 </body>
 </html>

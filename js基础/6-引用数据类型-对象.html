@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // var person = {
+    //   name:"小明",
+    //   age:20,
+    //   hobby:["篮球","游戏"]
+    // }
+    // person.school = "黑大";
+    // person.age = 18;
+    // delete person.hobby;
+
+    // console.log(person);
+
+    // var obj = {
+    //   name:"小明",
+    //   age:18
+    // }
+    // var obj2 = {}
+    // obj2 = obj;
+    // obj.age = 20;
+    // console.log(obj2);
+    
+    var person = {
+      name:"小明",
+      age:20,
+      eat:function(){
+        console.log(this.name+"吃饭");
+      }
+    }
+    person.eat();
+    
+  </script>
+</body>
+</html>

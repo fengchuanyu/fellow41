@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function foo() {
+      //第四步生成随机菜品
+      var ran = Math.floor(Math.random() * 10);
+      var foodName = "";
+      switch (ran) {
+        case 1: foodName = "宫保鸡丁"; break;
+        case 2: foodName = "土豆丝"; break;
+        case 3: foodName = "香辣肉丝"; break;
+        case 4: foodName = "锅包肉"; break;
+        case 5: foodName = "面条"; break;
+        case 6: foodName = "馒头"; break;
+        case 7: foodName = "包子"; break;
+        case 8: foodName = "粥"; break;
+        case 9: foodName = "凉菜"; break;
+        default: foodName = "不吃了"
+      }
+      return foodName;
+    }
+
+    //第一步弹出询问框
+    var isLun = confirm("是否选餐？");
+    console.log(isLun);
+    // 第二步选择人数
+    if (isLun) {
+      var arr = [];
+      var num = prompt("请输入用餐人数");
+      num = parseInt(num);
+      //第三部输入用户名
+      for (var i = 0; i < num; i++) {
+        var userName = prompt("请输入第" + (i + 1) + "个人的名字");
+        var food = foo();
+        arr.push(userName + "吃" + food);
+      }
+      console.log(arr);
+    } else {
+      console.log("点击取消");
+    }
+  </script>
+</body>
+
+</html>

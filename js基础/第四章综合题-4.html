@@ -8,21 +8,19 @@
 </head>
 <body>
   <script>
-    var num1 = 0x10;
-    var num2 = 0b010;
-    var num3 = 010;
-    // console.log(num3);
-    console.log(parseInt(num3,10));
-    
+  var sum = 0;
+  var res = 1;
 
-    // var num1 = 3;
-    // var num2 = 10;
-    // var num3 = 8;
-    // console.log(num3.toString(8));
-    
-
-
-    
+  for(var i=1;i<=10;i++){
+    res = 1;
+    for(var j=1;j<=i;j++){
+      res *= j;
+    }
+    sum += res;
+  }  
+  console.log(sum);
+  
+  
   </script>
 </body>
 </html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 400px;
+      height: 400px;
+      background-color: gray;
+      position: absolute;
+      top:50%;
+      left:50%;
+      margin-top:-200px;
+      margin-left: -200px;
+      text-align: center;
+      padding-top:150px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1 id="num">100</h1>
+    <button id="btn">开始</button>
+  </div>
+  <script>
+    var oNum = document.getElementById("num");
+    var oBtn = document.getElementById("btn");
+    var timer = null;
+    var isGoOn = true;
+
+    // oBtn.onclick = function(){
+    //   if(oBtn.innerText == "暂停"){
+    //     oBtn.innerText = "开始"
+    //     clearInterval(timer)
+    //   }else{
+    //     oBtn.innerText = "暂停"
+    //     timer = setInterval(function(){
+    //       --oNum.innerText
+    //     },1000)
+    //   }
+    // }
+
+    oBtn.onclick = function(){
+      // var timer = null;
+      oBtn.innerText = isGoOn?'暂停':'开始';
+      if(isGoOn){
+        timer = setInterval(function(){
+          --oNum.innerText
+        },1000)
+      }else{
+        clearInterval(timer)
+      }
+      isGoOn = !isGoOn;
+    }
+  </script>
+</body>
+</html>

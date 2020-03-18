@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <a id="alink" href="https://www.baidu.com">baidu</a>
+  <div>hello</div>
+  <button id="btn">button</button>
+  <script>
+    var oAlink = document.getElementById("alink");
+    var oBtn = document.getElementById("btn");
+    var oDiv = document.getElementsByTagName("div")[0];
+    //事件三要素  事件源 事件处理函数 事件对象
+    // oBtn.oncontextmenu = function(){
+    //   console.log("右键");
+    // }
+
+    // var a = 10;
+    // var a = 20;
+    // oBtn.onclick = function(){
+    //   oDiv.innerHTML = "<h1>hello world!</h1>"
+    // }
+    // oBtn.onclick = function(){
+    //   console.log("fellow41");
+    // }
+
+    // oBtn.addEventListener("click",function(){
+    //   oDiv.innerHTML = "<h1>hello world!</h1>"
+    // })
+    // oBtn.addEventListener("click",function(){
+    //   console.log("fellow41");
+      
+    // })
+
+    oBtn.oncontextmenu = function(e){
+      console.log(e);
+      return false
+    }
+
+    oAlink.onclick = function(e){
+      console.log("baidu");
+      e.preventDefault();
+    }
+  </script>
+</body>
+</html>

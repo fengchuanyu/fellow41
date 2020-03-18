@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // for(var i=10;i>=0;i--){
+    //   console.log(i);
+    // }
+    // function foo(){
+    //   console.log(10);
+      
+    // }
+    // setTimeout(function(){
+    //   console.log(10);
+    //   setTimeout(function(){
+    //     console.log(9);
+    //   },1000)
+    // },1000)
+
+    // clearTimeout();
+
+    // var i = 10;  
+
+    // var timer = setInterval(function(){
+    //   console.log(i);
+    //   i--;
+    // },1000)
+
+    // var timer2 = setInterval(function(){
+    //   console.log(i);
+    //   i--;
+    // },1000)
+
+
+    // console.log(timer,timer2);
+
+    var i = 10;
+    var timer = setInterval(function(){
+      console.log(i);
+      i--;
+      if(i<0){
+        clearInterval(timer)
+      }
+    },1000)
+
+
+  </script>
+</body>
+</html>

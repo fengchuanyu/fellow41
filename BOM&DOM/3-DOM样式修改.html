@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .active{
+      color: red;
+      font-size: 40px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="test test1 test2">hello</div>
+  <script>
+    var oDiv = document.getElementsByTagName("div")[0];
+    // oDiv.style.color = "red";
+    // oDiv.style.fontSize = "40px";
+
+    // var cName = oDiv.className;
+    // console.log(cName);
+    // oDiv.className =cName+ " active";
+
+    // var cName = oDiv.classList;
+    // console.log(cName);
+    oDiv.classList.remove("test2");
+    oDiv.classList.add("active");
+    oDiv.classList.replace("test1","aaa");
+    
+    
+  </script>
+</body>
+</html>

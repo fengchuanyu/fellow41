@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function foo(x){
+      var res = 0;
+      res = 4*(Math.pow(x,2))+3*x+2;
+      return res;
+    }
+
+    var num = prompt("请输入x");
+    num = parseInt(num);
+    document.write(foo(num))
+  </script>
+</body>
+</html>

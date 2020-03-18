@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function foo(x){
+      if(x%3==0 && x%5==0 && x%7==0){
+        return true
+      }else{
+        return false
+      }
+    }
+
+    var n = 0;//计数器 统计符合要求的数字个数
+    for(var i =1;i<=1000;i++){
+      if(foo(i)){
+        n++;
+        document.write(i+"&nbsp;");
+        if(n%6==0){
+          document.write("<br/>");
+        }
+      }
+    }
+
+  </script>
+</body>
+</html>

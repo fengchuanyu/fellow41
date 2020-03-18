@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // var num = Math.floor(Math.random()*9)+1;
+    // console.log(num);
+    
+    // 0.0000001  0.999999999
+
+    function foo(){
+      var num1 = Math.floor(Math.random()*9)+1;
+      var num2 = Math.floor(Math.random()*9)+1;
+      var num3 = Math.floor(Math.random()*9)+1;
+      if(num1 == 8 || num2 == 8 || num3 == 8){
+        return true
+      }else{
+        return false
+      }
+    }
+    var count = 0; //玩的次数
+    var win = 0;  //赢的次数
+    while(true){
+      var isCon  = confirm("是否继续游戏？");
+      if(isCon){
+        count++;
+        if(foo()){
+          win++;
+          console.log("本次成功");
+        }else{
+          console.log("本次失败");
+        }
+        console.log("获胜率为："+win/count*100+"%");
+      }else{
+        break;
+      }
+    }
+  </script>
+</body>
+
+</html>

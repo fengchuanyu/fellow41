@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Fibonacci(n){
+      if(n<3){
+        return 1
+      }else{
+        return Fibonacci(n-1)+Fibonacci(n-2)
+      }
+    }
+    var arr = [];
+    for(var i=1;i<=40;i++){
+      arr.push(Fibonacci(i))
+    }
+    arr = arr.reverse()
+
+    for(var j=0;j<40;j++){
+      document.write(arr[j]+"&nbsp;");
+      if((j+1)%6==0){
+        document.write("<br/>");
+      }
+    }
+    
+  </script>
+</body>
+
+</html>

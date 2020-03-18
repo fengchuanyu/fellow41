@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function CollectDigits(s){
+      var arr = s.split("");
+      var str = "";
+      for(var i=0;i<arr.length;i++){
+        if("0"<=arr[i] && arr[i]<="9"){
+          str+=arr[i];
+        }
+      }
+      return str;
+    } 
+    console.log(CollectDigits("1ab0c23def4") );
+  </script>
+</body>
+
+</html>

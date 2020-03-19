@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 400px;
+      height: 50px;
+      background-color: red;
+      /* transition: width 1s ease; */
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <script>
+    var oBox = document.getElementsByClassName("box")[0];
+    //设置元素宽度 this.style.width
+    //获取元素宽度 this.offsetWidth
+    //获取元素高度 this.offsetHeight
+    oBox.onmouseover = function(){
+      var _this = this;
+      this.style.width = "500px";
+      // console.log(this.style.width);
+
+      console.log(this.offsetWidth)
+      
+      // this.style.width = "500px";
+
+      // var nowWidth = 400;
+      // setInterval(function(){
+      //   // console.log(_this);
+      //   nowWidth+=10;
+      //   _this.style.width = nowWidth+"px";
+      // },16)
+    }
+  </script>
+</body>
+</html>

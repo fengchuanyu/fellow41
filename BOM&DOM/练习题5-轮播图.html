@@ -96,10 +96,12 @@
     </div>
   </div>
   <script>
+    var oBox = document.getElementsByClassName("box")[0];
     var imgList = document.getElementsByClassName("img")[0].getElementsByTagName("li");
     var navList = document.getElementsByClassName("nav-right")[0].getElementsByTagName("span");
     var arrNav = document.getElementsByClassName("nav-left")[0].getElementsByTagName("span");
     var nowIndex = 0;
+    var timer = null;
 
     //切换图片
     function changeImg(n){
@@ -131,6 +133,24 @@
       var thisIndex = nowIndex ==4?-1:nowIndex;
       changeImg(thisIndex+1)
     }
+
+    //移入停止定时函数
+    oBox.onmouseover = function(){
+      clearInterval(timer)
+    }
+
+    //移出开始定时函数
+    oBox.onmouseout = function(){
+      play();
+    }
+
+    //开始定时播放
+    function play(){
+      timer = setInterval(function(){
+        arrNav[1].onclick()
+      },1000)
+    }
+    play();
 
     // onmouseout
 

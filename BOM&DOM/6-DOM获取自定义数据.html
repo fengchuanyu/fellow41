@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li class="li-link" data-id="001" data-href="https://www.baidu.com">百度</li>
+    <li class="li-link" data-id="002" data-href="https://www.taobao.com">淘宝</li>
+  </ul>
+  <script>
+    var aLi = document.getElementsByClassName("li-link");
+    for(var i=0;i<aLi.length;i++){
+      aLi[i].onclick = function(){
+        // console.log(this.getAttribute("data-href"));
+        console.log(this.dataset.href);
+        location.replace(this.dataset.href)
+      }
+    }
+  </script>
+</body>
+</html>

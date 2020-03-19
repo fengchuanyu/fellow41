@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    li{
+      list-style: none;
+    }
+    .clearfix::after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .box{
+      width: 600px;
+      border:1px solid #666;
+      margin:100px auto;
+    }
+    .big-img{
+      text-align: center;
+      border-bottom: 1px solid #666;
+    }
+    .big-img img{
+      height: 220px;
+    }
+    .small-img li{
+      float: left;
+      width: 25%;
+      text-align: center;
+      box-sizing: border-box;
+      border-right: 1px solid #666;
+    }
+    .small-img li:last-child{
+      border-right: 0
+    }
+    .small-img li img{
+      width: 120px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="big-img">
+      <img id="bimg" src="./image/slider1.jpg" alt="">
+    </div>
+    <div class="small-img">
+      <ul class="clearfix">
+        <li>
+          <img src="./image/slider1.jpg" alt="">
+        </li>
+        <li>
+          <img src="./image/slider2.jpg" alt="">
+        </li>
+        <li>
+          <img src="./image/slider3.jpg" alt="">
+        </li>
+        <li>
+          <img src="./image/slider4.jpg" alt="">
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    var smallImg = document.getElementsByClassName("small-img")[0].getElementsByTagName("img");
+    var bigImg = document.getElementById("bimg");
+    for(var i=0;i<smallImg.length;i++){
+      smallImg[i].onmouseover = function(){
+        var thisAttr = this.getAttribute("src")
+        bigImg.setAttribute("src",thisAttr);
+      }
+    }
+    
+  </script>
+</body>
+
+</html>

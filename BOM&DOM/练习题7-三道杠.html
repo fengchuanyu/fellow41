@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 300px;
+      height: 50px;
+      background-color: red;
+      margin-bottom: 20px;
+    }
+  </style> 
+</head>
+
+<body>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <script>
+    var aBox = document.getElementsByClassName("box");
+
+    for(var i=0;i<aBox.length;i++){
+      aBox[i].timer = null;//给每一个box单独配置一个 timer
+      aBox[i].onmouseover = function(){ //给每一个box绑定移入（让当前元素不断变长）事件
+        clearInterval(this.timer);
+        var _this = this;
+        var nowWidth = 0;
+        this.timer = setInterval(function(){
+          nowWidth = _this.offsetWidth;
+          if(nowWidth==500){
+            clearInterval(_this.timer)
+          }else{
+            _this.style.width = nowWidth + 10 + "px";
+          }
+        },16)
+      }
+
+      aBox[i].onmouseout = function(){//给每一个box绑定移出（让当前元素不断变短）事件
+        clearInterval(this.timer);
+        var _this = this;
+        var nowWidth = 0;
+        this.timer = setInterval(function(){
+          nowWidth = _this.offsetWidth;
+          if(nowWidth == 300){
+            clearInterval(_this.timer);
+          }else{
+            _this.style.width = nowWidth - 10 + "px";
+          }
+        },16)
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 300px;
+      height: 50px;
+      background-color: red;
+    }
+  </style> 
+</head>
+
+<body>
+  <div class="box"></div>
+  <script>
+    var oBox = document.getElementsByClassName("box")[0];
+    var timer = null;
+
+    oBox.onmouseover = function(){
+      var _this = this;
+      clearInterval(timer);
+      timer = setInterval(function(){
+        var nowWidth = _this.offsetWidth;
+        if(nowWidth == 500){
+          clearInterval(timer)
+        }else{
+          _this.style.width = nowWidth+10+"px";
+        }
+      },16)
+    }
+
+    oBox.onmouseout = function(){
+      var _this = this; 
+      clearInterval(timer);
+      timer = setInterval(function(){
+        var nowWidth = _this.offsetWidth;
+        if(nowWidth == 300){
+          clearInterval(timer)
+        }else{
+          _this.style.width = nowWidth-10+"px";
+        }
+      },16)
+    }
+  </script>
+</body>
+
+</html>

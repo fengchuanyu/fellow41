@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    li{
+      list-style: none;
+    }
+    .clearfix::after{
+      content: "";
+      display: block;
+      clear:both;
+    }
+    .box{
+      border:1px solid #666;
+      width: 500px;
+      margin: 100px auto;
+    }
+    .nav{
+      height: 50px;
+      background-color: #000;
+      color: #fff;
+    }
+    .nav li{
+      float: left;
+      width: 100px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+    }
+    .nav .active{
+      background-color: #ddd;
+      color: #000;
+    }
+    .content{
+      padding:20px;
+    }
+    .content .text{
+      display: none;
+    }
+    .content .active{
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="nav">
+      <ul class="clearfix">
+        <li class="nav-list active">第一节课</li>
+        <li class="nav-list">第二节课</li>
+        <li class="nav-list">第三节课</li>
+      </ul>
+    </div>
+    <div class="content">
+      <div class="text active">
+        <p>第一节内容</p>
+      </div>
+      <div class="text">
+        <p>第二节内容</p>
+      </div>
+      <div class="text">
+        <p>第三节内容</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    var navList = document.getElementsByClassName("nav-list");
+    var contentList = document.getElementsByClassName("text");
+
+    for(var i=0;i<navList.length;i++){
+      navList[i].index = i; //给每一个导航链接 绑定索引
+      navList[i].onmouseover = function(){ //给每一个导航链接 绑定事件
+        for(var j=0;j<navList.length;j++){
+          contentList[j].classList.remove("active");
+          navList[j].classList.remove("active");
+        }
+        this.classList.add("active");
+        contentList[this.index].classList.add("active");
+      }
+    }
+  </script>
+</body>
+
+</html>

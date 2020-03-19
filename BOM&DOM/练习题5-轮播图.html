@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding:0;
+    }
+    html{
+      background-color: #000;
+    }
+    li{
+      list-style: none;
+    }
+    .box{
+      width: 490px;
+      height: 170px;
+      border:4px solid #fff;
+      margin:0 auto;
+      /* overflow: hidden; */
+      position: relative;
+    }
+    .box .img li{
+      display: none;
+    }
+    .box .img .active{
+      display: block;
+    }
+    .nav{
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+    }
+    .nav-left{
+      float: left;
+    }
+    .nav-right{
+      float: right;
+    }
+    .nav span{
+      cursor: pointer;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: #f90;
+      color: #fff;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 20px;
+      margin: 0 3px;
+    }
+    .nav .active{
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="img">
+      <ul>
+        <li class="active">
+          <img src="./image/01.jpg" alt="">
+        </li>
+        <li>
+          <img src="./image/02.jpg" alt="">
+        </li>
+        <li>
+          <img src="./image/03.jpg" alt="">
+        </li>
+        <li>
+          <img src="./image/04.jpg" alt="">
+        </li>
+        <li>
+          <img src="./image/05.jpg" alt="">
+        </li>
+      </ul>
+    </div>
+    <div class="nav">
+      <div class="nav-left">
+        <span>&lt;</span>
+        <span>&gt;</span>
+      </div>
+      <div class="nav-right">
+        <span class="active">1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

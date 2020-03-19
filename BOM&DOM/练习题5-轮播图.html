@@ -95,6 +95,22 @@
       </div>
     </div>
   </div>
+  <script>
+    var imgList = document.getElementsByClassName("img")[0].getElementsByTagName("li");
+    var navList = document.getElementsByClassName("nav-right")[0].getElementsByTagName("span");
+
+    for(var i=0;i<navList.length;i++){
+      navList[i].index = i;
+      navList[i].onmouseover = function(){
+        for(var j=0;j<navList.length;j++){
+          navList[j].className = "";
+          imgList[j].className = "";
+        }
+        this.className = "active";
+        imgList[this.index].className = "active";
+      }
+    }  
+  </script>
 </body>
 
 </html>

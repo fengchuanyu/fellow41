@@ -98,18 +98,80 @@
   <script>
     var imgList = document.getElementsByClassName("img")[0].getElementsByTagName("li");
     var navList = document.getElementsByClassName("nav-right")[0].getElementsByTagName("span");
+    var arrNav = document.getElementsByClassName("nav-left")[0].getElementsByTagName("span");
+    var nowIndex = 0;
 
+    //切换图片
+    function changeImg(n){
+      for(var j=0;j<navList.length;j++){
+        navList[j].className = "";
+        imgList[j].className = "";
+      }
+      navList[n].className = "active";
+      imgList[n].className = "active";
+      nowIndex = n;
+    }
+    
+    //数字按钮绑定事件
     for(var i=0;i<navList.length;i++){
       navList[i].index = i;
       navList[i].onmouseover = function(){
-        for(var j=0;j<navList.length;j++){
-          navList[j].className = "";
-          imgList[j].className = "";
-        }
-        this.className = "active";
-        imgList[this.index].className = "active";
+        changeImg(this.index)
       }
-    }  
+    } 
+    //方向按钮绑定事件
+    //左按钮
+    arrNav[0].onclick = function(){
+      var thisIndex = nowIndex ==0?5:nowIndex;
+      changeImg(thisIndex-1)
+    }
+
+    //右按钮
+    arrNav[1].onclick = function(){
+      var thisIndex = nowIndex ==4?-1:nowIndex;
+      changeImg(thisIndex+1)
+    }
+
+    // onmouseout
+
+    // //数字按钮绑定事件
+    // for(var i=0;i<navList.length;i++){
+    //   navList[i].index = i;
+    //   navList[i].onmouseover = function(){
+    //     for(var j=0;j<navList.length;j++){
+    //       navList[j].className = "";
+    //       imgList[j].className = "";
+    //     }
+    //     this.className = "active";
+    //     imgList[this.index].className = "active";
+    //     nowIndex = this.index;
+    //   }
+    // } 
+
+    // //方向按钮绑定事件
+    // //左按钮
+    // arrNav[0].onclick = function(){
+
+    //   nowIndex = nowIndex == 0?5:nowIndex; 
+    //   navList[nowIndex%5].className = "";
+    //   navList[(nowIndex-1)%5].className = "active";
+
+    //   imgList[nowIndex%5].className = "";
+    //   imgList[(nowIndex-1)%5].className = "active";
+
+    //   nowIndex --;
+    // }
+    // //右按钮
+    // arrNav[1].onclick = function(){
+    //   // nowIndex = nowIndex == 5?0:nowIndex;
+    //   navList[nowIndex%5].className = "";
+    //   navList[(nowIndex+1)%5].className = "active";
+
+    //   imgList[nowIndex%5].className = "";
+    //   imgList[(nowIndex+1)%5].className = "active";
+
+    //   nowIndex ++;
+    // }
   </script>
 </body>
 

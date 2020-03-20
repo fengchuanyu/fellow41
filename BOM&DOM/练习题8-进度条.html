@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 300px;
+      height: 30px;
+      border:1px solid black;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+    .pro{
+      height: 30px;
+      width: 0;
+      background-color: blue;
+    }
+    .text{
+      position: absolute;
+      top:5px;
+      left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="pro"></div>
+    <span class="text">0%</span>
+  </div>
+  <button id="btn">start</button>
+  <script>
+    var oBtn = document.getElementById("btn");
+    var oPro = document.getElementsByClassName("pro")[0];
+    var oText = document.getElementsByClassName("text")[0];
+
+
+    // oBtn.onclick = function(){
+    //   var num = 0;
+    //   var timer = null;
+    //   timer = setInterval(function(){
+    //     if(num == 100){
+    //       clearInterval(timer);
+    //     }else{
+    //       var proWidth = oPro.offsetWidth;
+    //       oPro.style.width = proWidth + 3 + "px";
+    //       oText.innerText = (++num) + "%";
+    //     }
+    //   },16)
+    // }
+
+    var num = 0;
+    function foo(){
+      if(num < 100){
+        var proWidth = oPro.offsetWidth;
+        oPro.style.width = proWidth + 3 + "px";
+        oText.innerText = (++num)+"%";
+        requestAnimationFrame(foo);
+      }
+    }
+
+    oBtn.onclick = function(){
+      foo();
+    }
+  </script>
+</body>
+</html>

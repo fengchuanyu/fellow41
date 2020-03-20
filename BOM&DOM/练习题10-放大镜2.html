@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 400px;
+      height: 400px;
+      position: relative;
+      float: left;
+    }
+    .box img{
+      width: 100%;
+      height: 100%;
+    }
+    .m-box{
+      width: 200px;
+      height: 200px;
+      opacity: .5;
+      background-color: #fff;
+      position: absolute;
+      top:0;
+      left: 0;
+    }
+    .big-img{
+      width: 400px;
+      height: 400px;
+      float: left;
+      margin-left: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+    .big-img img{
+      width: 800px;
+      height: 800px;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <img src="./image/niu.png">
+    <div class="m-box"></div>
+  </div>
+  <div class="big-img">
+    <img id="b-img" src="./image/niu.png">
+  </div>
+  <script>
+    var oBox = document.getElementsByClassName("box")[0];
+    var mBox = document.getElementsByClassName("m-box")[0];
+    var bigImg = document.getElementById("b-img");
+
+    oBox.onmousemove = function(e){
+      var thisLeft = e.clientX;
+      var thisTop = e.clientY;
+      
+      if(thisLeft>=300){
+        thisLeft = 300
+      }
+      if(thisLeft<=100){
+        thisLeft = 100
+      }
+      if(thisTop<=100){
+        thisTop=100
+      }
+      if(thisTop>=300){
+        thisTop = 300;
+      }
+
+      mBox.style.top = thisTop - 100+"px";
+      mBox.style.left = thisLeft -100+"px";
+      bigImg.style.left = -2*mBox.offsetLeft + "px";
+      bigImg.style.top = -2*mBox.offsetTop + "px";
+    }
+  </script>
+</body>
+</html>

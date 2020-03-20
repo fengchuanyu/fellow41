@@ -6,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <style>
+    *{
+      margin:0;
+    }
     .small-img{
       float: left;
       width: 400px;
@@ -13,6 +16,7 @@
       background-image: url("./image/niu.png");
       background-size: contain;
       position: relative;
+      overflow: hidden;
     }
     .big-img{
       margin-left: 20px;
@@ -20,6 +24,7 @@
       width: 400px;
       height: 400px;
       background-image: url("./image/niu.png");
+      background-size: 800px 800px;
     }
     .mosk{
       width: 200px;
@@ -36,5 +41,54 @@
     <div class="mosk"></div>
   </div>
   <div class="big-img"></div>
+  <script>
+    var oMosk = document.getElementsByClassName("mosk")[0];
+    var smallImg = document.getElementsByClassName("small-img")[0];
+    var bigImg = document.getElementsByClassName("big-img")[0];
+
+    smallImg.onmousemove = function(e){
+      //第一步 当前值为 mosk元素中心点定位到鼠标处
+      var thisTop = e.clientY -100;
+      var thisLeft = e.clientX -100;
+
+      //第二步 判断mosk 越界问题
+      if(thisTop <= 0 || thisTop >= 200){
+        thisTop = thisTop <=0 ? 0 : 200;
+      }
+      if(thisLeft <= 0 || thisLeft >= 200){
+        thisLeft = thisLeft <= 0 ? 0 : 200;
+      }
+
+      //第三步 设置mosk 的当前位置
+      oMosk.style.top = thisTop + "px";
+      oMosk.style.left = thisLeft + "px";
+
+      //第四步 修改大图对应位置
+      //相对于小图 方向相反 移动位置大图是小图的2倍
+      bigImg.style.backgroundPosition = (-thisLeft*2)+"px "+(-thisTop*2)+"px";
+    }
+
+    // smallImg.onmousemove = function(e){
+    //   var thisTop = e.clientY -100;
+    //   var thisLeft = e.clientX -100;
+
+    //   if(thisTop >= 0 && thisTop <= 200){
+    //     thisTop = thisTop;
+    //   }else{
+    //     thisTop = thisTop <=0 ? 0 : 200;
+    //   }
+    //   if(thisLeft >= 0 || thisLeft <= 200){
+    //     thisLeft = thisLeft;
+    //   }else{
+    //     thisLeft = thisLeft <= 0 ? 0 : 200;
+    //   }
+
+    //   oMosk.style.top = thisTop + "px";
+    //   oMosk.style.left = thisLeft + "px";
+    //   bigImg.style.backgroundPosition = (-thisLeft*2)+"px "+(-thisTop*2)+"px";
+    // }
+
+
+  </script>
 </body>
 </html>

@@ -48,8 +48,8 @@
 
     smallImg.onmousemove = function(e){
       //第一步 当前值为 mosk元素中心点定位到鼠标处
-      var thisTop = e.clientY -100;
-      var thisLeft = e.clientX -100;
+      var thisTop = e.clientY-100;
+      var thisLeft = e.clientX-100;
 
       //第二步 判断mosk 越界问题
       if(thisTop <= 0 || thisTop >= 200){
@@ -65,6 +65,7 @@
 
       //第四步 修改大图对应位置
       //相对于小图 方向相反 移动位置大图是小图的2倍
+      
       bigImg.style.backgroundPosition = (-thisLeft*2)+"px "+(-thisTop*2)+"px";
     }
 

@@ -22,7 +22,7 @@
       height: 170px;
       border:4px solid #fff;
       margin:0 auto;
-      /* overflow: hidden; */
+      overflow: hidden;
       position: relative;
     }
     .box .img{
@@ -109,11 +109,25 @@
     var navList = document.getElementsByClassName("nav-right")[0].getElementsByTagName("span");
     var arrNav = document.getElementsByClassName("nav-left")[0].getElementsByTagName("span");
     var timer = null;
+    var playTimer = null;
     var nowIndex = 0;
+    var isGoOn = true;
 
     function changeImg(n){
       var nowLeft = 0;
       var dir = -1;
+
+      //判断动画是否结束 如果已经结束那么不会触发if 后边的语句正常执行
+      //如果动画未结束 就会进入到if里 结束当前函数 因为函数内部遇到return则函数结束 后边的语句不会执行 
+      if(!isGoOn){
+        return false;
+      }
+
+      //切换数字按钮选中状态
+      for(var j=0;j<navList.length;j++){
+        navList[j].className = "";
+      }
+      navList[n].className = "active"
 
       //判断滚动方向
       // 当前索引（nowIndex）2 要去到的索引（n）为1
@@ -125,10 +139,12 @@
 
       //开始滚动动画
       timer = setInterval(function(){
+        isGoOn = false;
         nowLeft = oUl.offsetLeft
         if(n*-490 == nowLeft){
           clearInterval(timer)
           nowIndex = n;
+          isGoOn = true;
         }else{
           oUl.style.left = nowLeft + (10*dir) + "px";
         }
@@ -139,10 +155,49 @@
     for(var i=0;i<navList.length;i++){
       navList[i].index = i;
       navList[i].onclick=function(){
-        changeImg(this.index)
+        changeImg(this.index);
+        
+      }
+    }
+    //向左按钮事件
+    arrNav[0].onclick =function(){
+      if(nowIndex - 1 == -1){
+        changeImg(4)
+      }else{
+        changeImg(nowIndex - 1);
+      }
+    }
+    //向右按钮事件
+    arrNav[1].onclick =function(){
+      if(nowIndex+1 == 5){
+        changeImg(0)
+      }else{
+        changeImg(nowIndex+1);
       }
     }
 
+    //定时播放函数
+    function play(){
+      playTimer = setInterval(function(){
+        arrNav[1].onclick();
+      },3000)
+    }
+
+    //鼠标移入开始定时播放
+    oBox.onmouseover = function(){
+      clearInterval(playTimer);
+    }
+
+    //鼠标移出停止定时播放
+    oBox.onmouseout = function(){
+      play();
+    }
+
+    //页面加载是调用定时播放函数
+    play();
+
+
+    
   </script>
 </body>
 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .small-img{
+      float: left;
+      width: 400px;
+      height: 400px;
+      background-image: url("./image/niu.png");
+      background-size: contain;
+      position: relative;
+    }
+    .big-img{
+      margin-left: 20px;
+      float: left;
+      width: 400px;
+      height: 400px;
+      background-image: url("./image/niu.png");
+    }
+    .mosk{
+      width: 200px;
+      height: 200px;
+      background-color: rgba(255,255,255,0.5);
+      position: absolute;
+      top:0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="small-img">
+    <div class="mosk"></div>
+  </div>
+  <div class="big-img"></div>
+</body>
+</html>

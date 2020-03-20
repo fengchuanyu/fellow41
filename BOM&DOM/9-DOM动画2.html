@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div{
+      width: 300px;
+      height: 50px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="box"></div>
+  <script>
+    var oBox = document.getElementById("box");
+    function foo(){
+      var boxWidth = oBox.offsetWidth;
+      oBox.style.width = boxWidth + 10 + "px";
+      requestAnimationFrame(foo);
+    }
+    oBox.onmouseover = function(){
+      foo();
+    }
+
+    // function foo(){
+    //   console.log("com");
+    // }
+    // requestAnimationFrame(foo)
+
+    // setTimeout(function(){
+    //   console.log("com");
+    // },16)
+  </script>
+</body>
+</html>

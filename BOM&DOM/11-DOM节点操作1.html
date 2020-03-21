@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="oul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <!-- <li>4</li> -->
+  </ul>
+  <script>
+    var oUl = document.getElementById("oul");
+    var aLi1 = oUl.getElementsByTagName("li");
+    var aLi2 = oUl.childNodes;
+    var aLi3 = oUl.children;
+    // console.log(aLi1,aLi2,aLi3)
+    console.log(aLi2[1].nodeType);
+    
+  </script>
+</body>
+</html>

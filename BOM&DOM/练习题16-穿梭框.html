@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .sel{
+      width: 80px;
+      height: 150px;
+    }
+    .content{
+      float: left;
+      margin: 0 20px;
+    }
+    .btn{
+      width: 80px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      background-color: gray;
+      margin:10px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <select class="sel" name="left" id="sel1" multiple>
+      <option value="">选项1</option>
+      <option value="">选项2</option>
+      <option value="">选项3</option>
+      <option value="">选项4</option>
+      <option value="">选项5</option>
+      <option value="">选项6</option>
+      <option value="">选项7</option>
+    </select>
+    <div>
+      <div class="btn">
+        移动选中项
+      </div>
+      <div class="btn">
+        全部移动
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <select class="sel" name="right" id="sel2" multiple>
+      <option value="">选项8</option>
+    </select>
+    <div>
+      <div class="btn">
+        移动选中项
+      </div>
+      <div class="btn">
+        全部移动
+      </div>
+    </div>
+  </div>
+  <script>
+    var aSel = document.getElementsByClassName("sel");
+
+    //双击移位
+    for(var i =0;i<aSel.length;i++){
+      aSel[i].ondblclick = function(){
+        //当前双击的selecte
+        var thisSel = this.name == "left"?aSel[0]:aSel[1];
+        //另一个selecte
+        var siblingSel = this.name == "left"?aSel[1]:aSel[0];
+        //进行移位操作
+        siblingSel.appendChild(thisSel.children[this.selectedIndex])
+      }
+    }
+    
+
+  </script>
+</body>
+
+</html>

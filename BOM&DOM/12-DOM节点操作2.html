@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #li4 + li{
+      color:  red;
+    }
+    .box > div{
+      border:1px solid black;
+      padding:20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div>
+      <div>hello</div>
+    </div>
+  </div>
+  <ul id="oul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li id="li4">4</li>
+    <li>5</li>
+    <li>6</li>
+  </ul>
+  <script>
+    var li4 = document.getElementById("li4");
+    console.log(li4.previousElementSibling); //进获取元素节点
+    console.log(li4.previousSibling); //获取包含文本几节
+
+    console.log(li4.nextElementSibling);
+    console.log(li4.nextSibling);
+
+
+    
+    
+  </script>
+</body>
+</html>

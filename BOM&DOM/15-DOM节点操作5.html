@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div class="box1">
+    <div class="div1"><span>hello</span></div>
+  </div>
+  <div class="box2">
+    <div class="div2">world</div>
+
+  </div>
+  <script>
+     var oDiv1 = document.getElementsByClassName("div1")[0];
+     var oBox2 = document.getElementsByClassName("box2")[0];
+     var oDiv2 = document.getElementsByClassName("div2")[0];
+
+    //  oBox2.appendChild(oDiv1); 
+
+
+    // var newDiv1 = oDiv1.cloneNode(true);
+    // console.log(newDiv1);
+    // oBox2.appendChild(newDiv1);
+
+    // var newDiv1 = oDiv1.cloneNode(true);
+    // oBox2.replaceChild(newDiv1,oDiv2);
+
+    oBox2.removeChild(oDiv2);
+
+    
+  </script>
+</body>
+</html>

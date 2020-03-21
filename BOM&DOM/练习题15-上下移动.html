@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="box">
+    <div>
+      div1
+      <button class="down">向下</button>
+      <button class="up">向上</button>
+    </div>
+    <div>
+      div2
+      <button class="down">向下</button>
+      <button class="up">向上</button>
+    </div>
+    <div>
+      div3
+      <button class="down">向下</button>
+      <button class="up">向上</button>
+    </div>
+  </div>
+
+  <script>
+    var oBox = document.getElementsByClassName("box")[0];
+    var upBtn = document.getElementsByClassName("up");
+    var downBtn = document.getElementsByClassName("down");
+
+    for (var i = 0; i < upBtn.length; i++) {
+      //向上按钮
+      upBtn[i].onclick = function () {
+        var thisDiv = this.parentElement;
+        var preDiv = thisDiv.previousElementSibling;
+        if(preDiv){
+          oBox.insertBefore(thisDiv,preDiv);
+        }else{
+          console.log("已经到达顶部");
+        }
+      }
+      //向下按钮
+      downBtn[i].onclick = function(){
+        var thisDiv = this.parentElement;
+        var nextDiv = thisDiv.nextElementSibling;
+        if(nextDiv){
+          oBox.insertBefore(nextDiv,thisDiv)
+        }else{
+          console.log("到达底部");
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

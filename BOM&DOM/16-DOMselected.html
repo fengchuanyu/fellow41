@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #mul{
+      width: 100px;
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <!-- <select name="" id="mul" multiple>
+    <option value="">黑大</option>
+    <option value="">林大</option>
+    <option value="">农大</option>
+    <option value="">理工</option>
+  </select> -->
+
+  <!-- <input type="text" id="inp"> -->
+
+  <input type="checkbox" name="" id="chec">
+
+  <script>
+    // ondbclick 双击
+
+    var chec = document.getElementById("chec");
+    chec.onchange = function(){
+      console.log(this.checked);
+    }
+    
+    // var oInp = document.getElementById("inp");
+    // // oInp.onkeyup = function(){
+    // //   console.log("up",this.value);
+    // // }
+    // oInp.onkeydown = function(){
+    //   console.log("down",this.value);
+    // }
+
+    // var oSel = document.getElementById("mul");
+    // var aOpt = document.getElementsByTagName("option");
+    // oSel.onchange = function(){
+    //   // console.log(this.selectedIndex);
+      
+    //   for(var i = 0;i<aOpt.length;i++){
+    //     console.log(aOpt[i].selected);
+    //   }
+      
+    // }
+
+  </script>
+</body>
+</html>

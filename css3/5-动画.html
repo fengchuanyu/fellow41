@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 200px;
+      height: 200px;
+      border:2px dashed black;
+      margin: 100px auto;
+    }
+    .div1{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      /* animation: foo 1s ease; */
+      animation-name: foo;
+      animation-duration: 2s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      /* animation-delay: 1s; */
+      /* animation-fill-mode: forwards; */
+      /* animation-direction: reverse; */
+    }
+    .div1:hover{
+      animation-play-state: paused;
+    }
+    @keyframes foo{
+      from{
+        transform: rotate(0);
+      }
+      to{
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="div1"></div>
+  </div>
+</body>
+</html>

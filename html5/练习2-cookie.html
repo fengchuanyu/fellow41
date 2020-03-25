@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function setCookies(key,val,count){
+      var timer = new Date();
+      timer.setDate(timer.getDate()+count);
+      document.cookie = key+"="+val+";expires="+timer.toUTCString();
+    }
+
+    function getCookies(key){
+      var thisCookies = document.cookie;
+      var cookiesArr = thisCookies.split(";");
+      
+      for(var i=0;i<cookiesArr.length;i++){
+        var thisKey = cookiesArr[i].split("=")[0].trim();
+        if(key == thisKey){
+          return cookiesArr[i].split("=")[1]
+        }        
+      }
+    }
+
+    function removeCookies(key){
+      var timer = new Date();
+      timer.setDate(timer.getDate()-1);
+      document.cookie = key+"=null;expires="+timer.toUTCString();
+    }
+
+    setCookies("username","xiaoming",1);
+    setCookies("psw","123456",1);
+    setCookies("test","aaa",1);
+    // removeCookies("psw")
+    console.log(getCookies("psw"));
+    
+  </script>
+</body>
+</html>

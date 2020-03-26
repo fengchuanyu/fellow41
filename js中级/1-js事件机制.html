@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .div1{
+      width: 400px;
+      height: 400px;
+      background-color: red;
+    }
+    .div2{
+      width: 300px;
+      height: 300px;
+      background-color: blue;
+    }
+    .div3{
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="div1">
+    <div class="div2">
+      <div class="div3"></div>
+    </div>
+  </div>
+  <script>
+    var oDiv1 = document.querySelector(".div1");//红
+    var oDiv2 = document.querySelector(".div2");//蓝
+    var oDiv3 = document.querySelector(".div3");//黄
+
+    //事件冒泡 由内向外触发
+    // oDiv1.onclick = function(){
+    //   console.log("div1");
+    // }
+    // oDiv2.onclick = function(){
+    //   console.log("div2");
+    // }
+    // oDiv3.onclick = function(){
+    //   console.log("div3");
+    // }
+
+    //事件捕获 由外向内触发
+    // function foo(){
+    //   console.log("div1");
+      
+    // }
+    // oDiv1.addEventListener("click",foo,true)
+
+    // oDiv2.addEventListener("click",function(){
+    //   console.log("div2");
+    // },true)
+    // oDiv3.addEventListener("click",function(){
+    //   console.log("div3");
+    // },true)
+
+    // oDiv1.removeEventListener("click",foo,true);
+
+
+
+    oDiv1.addEventListener("click",function(e){
+      console.log("div1");
+    },false)
+    oDiv2.addEventListener("click",function(e){
+      console.log("div2");
+    },false)
+    oDiv3.addEventListener("click",function(e){
+      console.log("div3");
+      e.stopPropagation();//阻止冒泡
+    },false)
+
+  </script>
+</body>
+</html>

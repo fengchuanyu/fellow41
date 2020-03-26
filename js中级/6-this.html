@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">btn</button>
+  <script>
+    var btn = document.querySelector("#btn");
+    btn.onclick = function(){
+      console.log(this);
+      function foo(){
+        console.log(this);
+      }
+      foo();
+    }
+
+    function foo(){
+      console.log(this);
+    }
+    foo()
+
+    var obj = {
+      username:"xiaoming",
+      showName:function(){
+        console.log(this);
+        function foo(){
+          console.log(this);
+        }
+        foo()
+      }
+    }
+    obj.showName();
+    var obj = {
+      a:"hello"
+    }
+    var a = 10;
+    function foo(n,m){
+      console.log(this.a + n + m);
+    }
+    // foo()
+
+    // foo.call(obj," world"," fellow41");
+    // foo.apply(obj,[" world"," fellow41"]);
+    var foo2 = foo.bind(obj," world"," fellow41");
+    foo2();
+
+  </script>
+</body>
+</html>

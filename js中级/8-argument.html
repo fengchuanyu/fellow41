@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // function Foo2(a,s,e){
+    //   this.arr = a
+    //   this.start = s;
+    //   this.end =e;
+    // }
+    // Foo2.prototype.slice = function(){
+    //   var thisArr = this.arr;
+    //   var newArr = [];
+    //   var thisLength = this.end?this.end:thisArr.length;
+    //   for(var i=this.start;i<thisLength;i++){
+    //     newArr.push(thisArr[i])
+    //   }
+    //   return newArr;
+    // }
+    // var arr1 = new Foo2([1,2,3,4,5,6],1,4);
+    // console.log(arr1.slice()); // 234
+    
+    // function foo(){
+    //   // var thisArg = [] 
+    //   var thisArg = new Foo2(arguments,0);
+    //   console.log(thisArg.slice());
+      
+    // }
+    // foo("a","b","c","d");
+
+
+    // function foo(){
+    //   // console.log(arguments);
+    //   // for(var i=0;i<arguments.length;i++){
+    //   //   console.log(arguments[i]);
+    //   // }
+
+    //   // var arr = [];
+    //   // for(var i=0;i<arguments.length;i++){
+    //   //   arr.push(arguments[i])
+    //   // }
+    //   // arr.push("e");
+    //   // console.log(arr);
+      
+    //   console.log(arguments.push("e"));
+      
+      
+    // }
+    // foo("a","b","c","d")
+
+
+    function foo(){
+      //类数组转换真实数组；
+      var thisArg = Array.prototype.slice.call(arguments,0);
+
+      console.log(thisArg);
+      
+    }
+    foo("a","b","c","d")
+  </script>
+</body>
+</html>

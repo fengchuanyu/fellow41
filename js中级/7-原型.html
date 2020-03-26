@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // function foo(){
+
+    // }
+
+    // foo.fellow() //hello world
+    // var n = new Number();
+    // n.push("1");
+
+    // var arr = new Array(); //arr实例化出的对象  Array 构造函数
+    // console.log(arr.__proto__);//实例化对象查看原型
+    // console.log(Array.prototype);//构造函数查看原型
+    
+    
+    // arr.push("1");
+    // console.log(arr);
+
+    // var arr = new Array()
+    // console.log(arr.length);
+    
+
+    //原型链
+    function Foo(i){
+      this.fellow = i;
+      // this.showFellow = function(){
+      //   console.log("hello");
+      // }
+    }
+    Foo.prototype.showFellow = function(){
+      console.log(this.fellow);
+      
+    }
+    var foo = new Foo(43);
+    console.log(foo.fellow);
+    foo.showFellow();
+    
+    // console.log(Foo.prototype);
+    
+  </script>
+</body>
+</html>

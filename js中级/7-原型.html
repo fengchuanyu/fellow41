@@ -31,19 +31,31 @@
     //原型链
     function Foo(i){
       this.fellow = i;
-      // this.showFellow = function(){
-      //   console.log("hello");
-      // }
+      this.showFellow = function(){
+        console.log("hello");
+      }
     }
     Foo.prototype.showFellow = function(){
       console.log(this.fellow);
       
     }
-    var foo = new Foo(43);
-    console.log(foo.fellow);
-    foo.showFellow();
+    // var foo = new Foo(43);
+    // console.log(foo.fellow);
+    // foo.showFellow();
     
     // console.log(Foo.prototype);
+
+    Array.prototype.fellow = function(){
+      console.log(this);
+    } 
+    var arr = ["hello"];
+    var a = new Array();
+    arr.fellow()
+
+    function foo(){
+
+    }
+
     
   </script>
 </body>

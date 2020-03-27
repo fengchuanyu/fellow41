@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+  <style>
+    *{
+      margin:0;
+    }
+    .box{
+      height: 100px;
+      width: 100px;
+      border:10px solid black;
+      margin:100px auto;
+      position: relative;
+    }
+    .div1{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+      top:10px;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="div1"></div>
+  </div>
+  <script>
+    // console.log($(".div1").offset());
+    // $(".div1").offset({top:200})
+
+    // console.log($(".div1").offsetParent());
+    
+    console.log($(".div1").position());
+    $(".div1").position()
+    
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+  <style>
+    .active{
+      color: red
+    }
+  </style>
+</head>
+<body>
+  <div class="box">hello world</div>
+  <button id="btn">change</button>
+  <script>
+    // $(".box").attr("class","box active");
+    // $(".box").addClass("active");
+    // $(".box").removeClass("active");
+    // console.log($(".box").hasClass("active1"));
+
+
+    $("#btn").click(function(){
+      $(".box").toggleClass("active");
+    })
+
+  </script>
+</body>
+</html>

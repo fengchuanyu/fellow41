@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <h1>你爱好的运动是？</h1>
+  <form>
+    <input type="checkbox" name="hobby" value="1">足球
+    <input type="checkbox" name="hobby" value="2">排球
+    <input type="checkbox" name="hobby" value="3">篮球
+    <input type="checkbox" name="hobby" value="4">羽毛球
+    <br>
+    <button id="all" type="button">全选</button>
+    <button id="no" type="button">全不选</button>
+    <button id="reverse" type="button">反选</button>
+  </form>
+  <script>
+    $("#all").click(function(){
+      $(":checkbox").prop("checked",true);
+    })
+
+    $("#no").click(function(){
+      $(":checkbox").prop("checked",false);
+    })
+
+    // $("#reverse").click(function(){
+    //   for(var i=0;i<$(":checkbox").length;i++){
+    //     if($(":checkbox:eq("+i+")").prop("checked")){
+    //       $(":checkbox:eq("+i+")").prop("checked",false)
+    //     }else{
+    //       $(":checkbox:eq("+i+")").prop("checked",true)
+    //     }
+    //   }
+    // })
+
+    $("#reverse").click(function(){
+      for(var i=0;i<$(":checkbox").length;i++){
+        var thisChec = $(":checkbox").get(i)
+        thisChec.checked = !thisChec.checked
+      }
+    })
+  </script>
+</body>
+
+</html>

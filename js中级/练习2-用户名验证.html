@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./ajax.js"></script>
+</head>
+<body>
+  <input id="inp" type="text">
+  <div>
+    <h1 id="text"></h1>
+  </div>
+  <script>
+    var oInp = document.querySelector("#inp");
+    var oText = document.querySelector("#text");
+    oInp.onkeyup = function(){
+      var thisVal = this.value;
+      ajaxGet("https://api.myjson.com/bins/l8pz0",function(res){
+        var resArr = res.name;
+        for(var i=0;i<resArr.length;i++){
+          if(thisVal == resArr[i]){
+            oText.innerText = "不可用";
+            return true;
+          }
+        }
+        oText.innerText = "可用";
+      });
+      
+    }
+
+   
+  </script>
+</body>
+</html>

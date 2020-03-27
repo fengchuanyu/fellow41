@@ -103,6 +103,12 @@
   </table>
 
   <script>
+    $("#filterName").keyup(function(){
+      var thisVal = $(this).val();
+      console.log(thisVal);
+      $("tbody tr").css({display:"none"});   
+      $("tbody tr:contains("+ thisVal +")").css({display:"table-row"})   
+    })
   </script>
 </body>
 

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+  <style>
+    li{
+      border:1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li><span>2</span></li>
+    <li>3</li>
+    <li>4</li>
+    <li></li>
+    <li>6</li>
+  </ul>
+  <script>
+    // $("li:empty").css({borderColor:"red"})
+    // $("li:has(span)").css({borderColor:"red"})
+    $("li:parent").css({borderColor:"red"})
+
+  </script>
+</body>
+
+</html>

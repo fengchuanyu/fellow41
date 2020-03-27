@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+  <style>
+    /* [name*=test]{
+      color: red
+    } */
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+  </ul>
+  <div class="box">
+    <p>title</p>
+    <div>a</div>
+    <p>title2</p>
+    <div>b</div>
+    <div>c</div>
+    <div>d</div>
+  </div>
+  <script>
+  //  $("li:first-child").css({color:"red"});
+  //  $(".box div:first-child").css({color:"red"});
+  //  $(".box div:first-of-type").css({color:"red"});
+  // $("li:nth-last-child(1)").css({color:"red"});
+  $(".box div:nth-of-type(2)").css({color:"red"});
+
+  </script>
+</body>
+
+</html>

@@ -56,7 +56,25 @@
     </tbody>
   </table>
   <script>
+    $(".editable").click(function(){
+      var thisText = $(this).text();
+      if($(this).children().length<1){
+        $(this).html("<input type='text' class='inp' value='"+thisText+"'/>").find(".inp").focus();
+      }
 
+    })
+
+    $(".editable").focusout(function(){
+      var thisVal = $(this).find(":input").val();
+      $(this).text(thisVal)
+      
+    })
+
+    $(".editable").on("keyup",function(e){
+      if(e.which == 13){
+        $(this).trigger("focusout")
+      }
+    })
   </script>
 </body>
 </html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="box">
+    <div class="div0">0</div>
+    <div class="div1">1</div>
+    <div class="div2">2
+      <span>hello</span>
+    </div>
+    <div class="div3">3</div>
+    <div class="div4">4</div>
+  </div>
+
+
+  <button id="btn">change</button>
+  <script>
+
+    $("#btn").click(function () {
+      // $(".div2").css({color:"red"});
+      // $(".div3").css({color:"red"});
+      // $(".div2,.div3").css({color:"red"});
+      // $(".div2").add(".div3").css({color:"red"});
+
+      // console.log($(".div2").contents());
+      
+      // var a = $("div").each(function(index,ele){
+      //   if(index == 3){
+      //     return ele
+      //   }
+      // })
+      // console.log(a);
+
+      // var b = $("div").map(function(index,ele){
+      //   if(index == 3){
+      //     return ele
+      //   }
+      // })
+      // console.log(b);
+
+      // $(".div2").siblings().css({color:"red"});
+      // $(".div2").css({color:"blue"});
+      // $(".div2").css({color:"blue"}).siblings().css({color:"red"});
+      $(".div2").siblings().css({color:"red"}).end().css({color:"blue"});
+
+    })
+  </script>
+</body>
+
+</html>

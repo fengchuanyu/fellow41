@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<body>
+  <div class="box">
+    <input type="text" id="inp">
+  </div>
+  <!-- <button id="btn">按钮</button> -->
+  <script>
+    $("#inp").keyup(function(e){
+      console.log(e);
+      if(e.which == 13){
+        console.log("按下了回车");
+        
+      }
+    })
+
+    // $(".box").focusout(function(){
+    //   console.log("out")
+    // })
+    // $(".box").focusin(function(){
+    //   console.log("in")
+    // })
+
+    // $("#btn").click(function(){
+    //   $("#inp").focus();
+    // })
+    // $("#inp").focus(function(){
+    //   console.log('focus');
+      
+    // })
+    // $("#inp").blur(function(){
+    //   console.log("blur");
+      
+    // })
+  </script>
+</body>
+</html>

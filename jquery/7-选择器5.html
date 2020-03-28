@@ -26,6 +26,11 @@
   <script>
     // $("[name*=test]")
     // $("[class~=testb]").css({color:"red"})
+    var str = $(':checkbox').map(function() {
+      return this.id;
+    }).get();
+    console.log(str);
+    
   </script>
 </body>
 

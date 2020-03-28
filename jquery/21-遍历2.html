@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="parent1">
+    <div class="box">
+      <div class="div0">0</div>
+      <div class="div1">1</div>
+      <div class="div2">2
+        <div class="child1">hello</div>
+      </div>
+      <div class="div3">3</div>
+      <div class="div4">4</div>
+      <p>p</p>
+    </div>
+  </div>
+
+
+  <button id="btn">change</button>
+  <script>
+
+    $("#btn").click(function () {
+      // $(".div1").nextAll("div").css({color:"red"})
+      // $(".div1").nextAll("div").addBack().css({color:"red"});
+      // $(".box").children("div").css({border:"1px solid black"})
+
+      // console.log($(".child1").closest(".box"));
+      // console.log($(".child1").parents("div"));
+      // console.log($(".child1").parent("div"));
+      // console.log($(".child1").parentsUntil(".parent1"));
+
+      // $(".parent1").find(".child1").css({color:"red"});
+
+    })
+  </script>
+</body>
+
+</html>

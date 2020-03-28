@@ -51,7 +51,37 @@
       </div>
     </div>
   <script>
-  
+    $("#add_all").click(function(){
+      $("#select1 option").appendTo("#select2");
+    })
+    $("#remove_all").click(function(){
+      $("#select2 option").appendTo("#select1");
+    })
+    $("#add").click(function(){
+      $("#select1 option:selected").appendTo("#select2");
+    })
+    $("#remove").click(function(){
+      $("#select2 option:selected").appendTo("#select1");
+    })
+
+    //错误方法
+    // $("#select1 option").dblclick(function(){
+    //   // console.log(this);
+    //   $(this).appendTo("#select2");
+    // })
+    // $("#select2 option").dblclick(function(){
+    //   // console.log(this);
+    //   $(this).appendTo("#select1");
+    // })
+
+    $("#select1").on("dblclick","option",function(){
+      $(this).appendTo("#select2")
+    })
+    $("#select2").on("dblclick","option",function(){
+      // $(this).appendTo("#select1")
+      $("#select1").append(this)
+    })
+
   </script>
 </body>
 </html>

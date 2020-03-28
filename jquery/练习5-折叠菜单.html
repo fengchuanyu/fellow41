@@ -36,7 +36,20 @@
     </tbody>
   </table>
   <script>
+    $(".parent").click(function(){
+      // if($(this).hasClass("selected")){
+      //   $(this).removeClass("selected");
+      // }else{
+      //   $(this).addClass("selected");
+      // }
 
+      // $(this).toggleClass("selected").nextUntil(".parent").toggleClass("is-show");
+      
+      var thisId = $(this).attr("id");
+      $("[class*="+thisId+"]").toggleClass("is-show");
+      $(this).toggleClass("selected");
+      
+    })
     
   </script>
 </body>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+  <style>
+    .box{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">按钮</button>
+  <div class="box"></div>
+  <script>
+    // function foo(){
+    //   console.log("按钮点击");
+    // }
+    // $("#btn").on("click",foo)
+    // $("#btn").off("click",foo)
+    $(".box").hover(function(){
+      console.log("鼠标移入");
+      
+    },function(){
+      console.log("鼠标移出");
+      
+    })
+  </script>
+</body>
+</html>

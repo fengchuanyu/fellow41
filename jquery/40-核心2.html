@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div class="box1"></div>
+  <div class="box2"></div>
+  <div class="box3"></div>
+  <script>
+   $.fn.extend({
+    fellow:function(obj){
+      var person = {
+        name:"小明",
+        age:20,
+        school:"黑大"
+      }
+      $.extend(person,obj);
+      var btn = $("<button class='btn'>按钮</button>")
+      $(this).html(btn)
+      btn.click(function(){
+        console.log(person);
+      })
+    }
+   }) 
+
+   var person2 = {
+     name:"xiaoa",
+     age:17,
+     school:"林大"
+   }
+   var person3 = {
+     name:"xiaob",
+     age:19
+   }
+   $(".box1").fellow();
+   $(".box2").fellow(person2);
+   $(".box3").fellow(person3);
+
+    
+  </script>
+</body>
+</html>

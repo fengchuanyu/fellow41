@@ -1,0 +1,37 @@
+*{
+  margin:0;
+  padding:0;
+}
+.mosk{
+  /* width: 100vw;
+  height: 100vh; */
+  display: none;
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color: rgba(0,0,0,.3);
+}
+.box{
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  top:50%;
+  left:50%;
+  margin-left:-200px;
+  margin-top:-150px;
+  background-color: #fff;
+}
+.box-header{
+  height: 50px;
+  background-color: #000;
+  padding:0 10px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.close{
+  cursor: pointer;
+}

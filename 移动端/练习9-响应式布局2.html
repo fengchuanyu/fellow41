@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+    }
+    .clearfix::after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .container{
+      max-width: 960px;
+      margin:0 auto;
+    }
+    header,nav,footer{
+      width: 100%;
+      height: 100px;
+      background-color: #999;
+      text-align: center;
+      line-height: 100px;
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .img-bar {
+      background-image: url("./img/01_s.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding-top:56%;
+    }
+    article,aside{
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+    article{
+      width: 65%;
+      height: 300px;
+      background-color: blue;
+      float: left;
+    }
+    aside{
+      float: right;
+      width: 30%;
+      height: 300px;
+      background-color: red;
+    }
+    .info-bar{
+      margin:10px 0;
+    }
+    @media (max-width:600px){
+      article,aside{
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>页头</header>
+    <nav>导航</nav>
+    <div class="img-bar">
+      
+    </div>
+    <div class="info-bar clearfix">
+      <article>
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus
+              vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam
+              quis
+              magna facilisis, eget feugiat nisi lacinia.
+            </p>
+      </article>
+      <aside>
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus
+              vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam
+              quis
+              magna facilisis, eget feugiat nisi lacinia.
+            </p>
+      </aside>
+    </div>
+    <footer>页脚</footer>
+  </div>
+</body>
+</html>

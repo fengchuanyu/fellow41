@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <script>
+    var oBox = document.querySelector(".box");
+    oBox.ontouchstart = function(){
+      console.log("touchstart");
+    }
+    oBox.ontouchmove = function(){
+      console.log("touchmove")
+    }
+    oBox.ontouchend = function(e){
+      console.log("touchend");
+      console.log(e);
+      
+    }
+    // oBox.ontouchcancel = function(){
+
+    // }
+  </script>
+</body>
+</html>

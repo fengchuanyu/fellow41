@@ -49,4 +49,34 @@
   font-size: 30px;
 }
 
+.box7 {
+  height: 8px;
+  font-size: 6px;
+  width: 25%;
+}
+
+.box8 {
+  background-image: url("./img/xxx.jpg");
+}
+
+.box8::after {
+  content: 7;
+  width: 12;
+}
+
+.box10 {
+  border: 1px solid green;
+  flex-grow: 2;
+  color: black;
+}
+
+.box11 {
+  color: blue;
+}
+
+/* this text : hello*/
+.box12 {
+  color: #ff6700;
+}
+
 /*# sourceMappingURL=index.css.map */

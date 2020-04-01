@@ -1,10 +1,51 @@
+/*! main */
+@import "./main.scss";
 $color:#ff6700;
 .box{
+  /*box style*/
   color: $color;
+  &-header{
+    font-size: 30px;
+  }
+  &:hover{
+    color: black;
+  }
+  .div1{
+    font-size: 20px;
+    .child1{
+      font-weight: bold;
+    }
+  }
 }
 .box2{
-  border:1px solid $color;
+  // border:1px solid $color;
+  border: {
+    left:{
+      color:$color;
+      width:1px;
+      style:"solid";
+    }
+  }
+
+}
+@mixin foo ($h:300px,$w:300px,$c:red){
+  width: $w;
+  height: $h;
+  background-color: $c;
 }
 .box3{
-  background-color: $color;
+  @include foo(300px,300px,yellow);
+}
+.box4{
+  @include foo($c:blue);
+  font-size: 30px;
+}
+.box5{
+  width: 200px;
+  height: 20px;
+  background-color: red;
+}
+.box6{
+  @extend .box5;
+  font-size: 30px;
 }

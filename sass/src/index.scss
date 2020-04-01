@@ -1,0 +1,10 @@
+$color:#ff6700;
+.box{
+  color: $color;
+}
+.box2{
+  border:1px solid $color;
+}
+.box3{
+  background-color: $color;
+}

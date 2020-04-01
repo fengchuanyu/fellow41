@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/zepto.js"></script>
+  <script src="./js/touch.js"></script>
+  <style>
+    span{
+      display: none;
+    }
+    .active{
+      display: inline;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>
+      list item 1 <span>DELETE</span>
+    </li>
+    <li>
+      list item 2 <span>DELETE</span>
+    </li>
+  </ul>
+  <script>
+    $("li").swipe(function(){
+      $(this).siblings().children("span").removeClass("active");
+      $(this).children("span").addClass("active");
+    })
+    $("span").tap(function(){
+      $(this).parent("li").remove();
+    })
+  </script>
+</body>
+</html>

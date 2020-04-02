@@ -106,3 +106,47 @@ $text3:"color";
   // color: $color
   #{$text3}:$color
 }
+
+// @for $i from 1 through 10{
+//   .div-#{$i}{
+//     width: #{$i}px;
+//   }
+// }
+
+// @for $i from 1 to 10{
+//   .div-#{$i}{
+//     width: #{$i}px;
+
+//   }
+// }
+
+// $arr: a b c d e;
+
+// @each $var in $arr {
+//   .div-#{$var}{
+//     color: red;
+//   }
+// }
+$i:1;
+@while $i<12 {
+  .div-#{$i}{
+    width: 1px;
+  }
+  $i:$i+1
+}
+
+@function foo($n){
+  @if($n == 0){
+    @return red;
+  }@else if($n == 1){
+    @return blue;
+  }@else{
+    // @warn '警告11';
+    // @error 'error11';
+    @return yellow;
+  }
+}
+
+.box13{
+  color: foo(6);
+}

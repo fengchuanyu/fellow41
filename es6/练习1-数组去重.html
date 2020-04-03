@@ -63,6 +63,11 @@
     //   return newArr;
     // }
 
+    //方案五 利用set
+    function unique(arr){
+      let newArr = new Set(arr);
+      return Array.from(newArr);
+    }
 
     console.log(unique(arr));
   </script>

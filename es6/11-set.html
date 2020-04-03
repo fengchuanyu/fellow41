@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // let arr = [1,2,3,4,3,5,1]
+    // let setArr = new Set(arr);
+    // setArr.add(5);
+    // setArr.add("hello");
+    // setArr.add({name:"aa"});
+    // setArr.delete(5);
+    // setArr.clear();
+    // console.log(setArr);
+    // console.log(setArr.size);
+    // console.log(setArr.has("hello"));
+    // for(let val of setArr){
+    //   console.log(val);
+      
+    // }
+
+    let wsArr = new WeakSet();
+    let obj = {
+      name:"xiao a"
+    }
+    wsArr.add(obj);
+    wsArr.add(obj);
+    wsArr.add({age:10})
+
+    console.log(wsArr);
+    
+    
+    
+  </script>
+</body>
+</html>

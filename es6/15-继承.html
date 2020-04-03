@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // function Person(name,age){
+    //   this.name = name;
+    //   this.age = age;
+    // }  
+    // Person.prototype.showName = function(){
+    //   console.log(this.name);
+    //   // console.log("com");
+      
+    // }
+    // let student = new Person("xiao a","18");
+    // console.log(student.name);
+    // student.showName();
+
+    //构造继承
+    // function Teachter(name,age,school){
+    //   Person.call(this,name,age)
+    //   this.school = school;
+    // }
+    // let teacher1 = new Teachter("老李",30,"农大")
+    // console.log(teacher1.school);
+    // teacher1.showName();
+
+    //原型继承
+    // function Teacher(name,age){
+    //   this.name = name;
+    //   this.age = age;
+    // }
+    // Teacher.prototype = new Person("小王",20);
+    // let teacher1 = new Teacher();
+    // teacher1.showName();
+
+    //组合继承
+    function Person(name,age){
+      this.name = name;
+      this.age = age;
+    }
+    Person.prototype.showName = function(){
+      console.log(this.name);
+    }
+    function Teacher(name,age){
+      Person.call(this,name,age);
+    }
+    Teacher.prototype = new Person();
+    Teacher.prototype.constructor = Teacher;
+
+    let teacher1 = new Teacher("小王",20);
+    console.log(teacher1.name);
+    teacher1.showName()
+    console.log(teacher1.__proto__.constructor);
+    
+  </script>
+</body>
+</html>

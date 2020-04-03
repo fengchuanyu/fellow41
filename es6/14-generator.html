@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<body>
+  <script>
+    // function* foo(){
+    //   console.log(1);
+    //   yield;
+    //   console.log(2);
+    //   yield;
+    //   console.log(3);
+    // }  
+    // let foo2 = foo();
+    // foo2.next();
+    // foo2.next();
+    // foo2.next();
+
+    // function* foo(){
+    //   yield "hello";
+    //   yield "world";
+    //   return "ending"
+    // }  
+    // let foo2 = foo();
+    // console.log(foo2.next());
+    // console.log(foo2.next());
+    // console.log(foo2.next());
+
+    // function* foo(x) {
+    //   // var y = 2 * (yield (x + 1));
+    //   var y = yield (x+1);
+    //   console.log(y);
+    //   var z = yield (y / 3);
+    //   return (x + y + z);
+    // }
+    // let foo2 = foo(5);
+    // console.log(foo2.next());
+    // console.log(foo2.next("aaaa"));
+    // console.log(foo2.next());
+
+    // function* foo(x) {
+    //   var y = 2 * (yield (x + 1));
+    //   var z = yield (y / 3);
+    //   return (x + y + z);
+    // }
+    // let foo2 = foo(5);
+    // console.log(foo2.next());
+    // console.log(foo2.next(6));
+    // console.log(foo2.next(4));
+
+
+    function getData(url){
+      $.get(url,function(res){
+        foo2.next(res)
+      })
+    }
+    function* foo(){
+      console.log(yield getData("./data/a.json"));
+      console.log(yield getData("./data/b.json"));
+      console.log(yield getData("./data/c.json"));
+    }
+    let foo2 = foo();
+    foo2.next();
+    
+  </script>
+</body>
+</html>

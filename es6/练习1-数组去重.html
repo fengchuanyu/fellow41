@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let arr = [1,4,2,3,2,4,2,3,5];
+    //[1,2,2,3,3,4,4,5];
+
+    //方案一 includes 和 新数组
+    // function unique(arr){
+    //   let newArr = [];
+    //   for(let val of arr){
+    //     if(!newArr.includes(val)){
+    //       newArr.push(val);
+    //     }
+    //   }
+    //   return newArr
+    // }
+
+    //方案二 利用 排序 和 新数组
+    // function unique(arr){
+    //   let newArr = [];
+    //   arr = arr.sort(function(a,b){
+    //     return a-b;
+    //   })
+    //   newArr[0] = arr[0];
+    //   for(let i = 1;i<arr.length;i++){
+    //     if(arr[i] != arr[i-1]){
+    //       newArr.push(arr[i]);
+    //     }
+    //   }
+    //   return newArr;
+    // }
+    
+    //方案三 利用对象属性名称不能重复
+    // function unique(arr){
+    //   let newArr = [];
+    //   let obj = {};
+    //   arr.map(function(val,index){
+    //     if(!(val in obj)){
+    //       obj[val] = 1;
+    //       newArr.push(val);
+    //     }else{
+    //       obj[val]++
+    //     }
+    //   })
+    //   return newArr      
+    // }  
+
+    //方案四 利用filter 
+    // function unique(arr){
+    //   let newArr = [];
+    //   newArr = arr.filter(function(val,index){
+    //     if(arr.indexOf(val) == index){
+    //       return val
+    //     }
+    //   })
+    //   return newArr;
+    // }
+
+
+    console.log(unique(arr));
+  </script>
+</body>
+</html>

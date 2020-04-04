@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // async function foo(){
+    //   // return "hello";
+    //   // return Promise.resolve("hello");
+    //   // return Promise.reject("error")
+    // }
+
+    // foo().then(function(res){
+    //   console.log(res);
+    // }).catch(function(res){
+    //   console.log(res);
+      
+    // })
+
+    // function timer(ms){
+    //   return new Promise(function(resolve,reject){
+    //     setTimeout(function(){
+    //       resolve("ok")
+    //     },ms)
+    //   })
+    // }
+
+    // timer(1000).then(function(res){
+    //   console.log("第一层执行结果："+res);
+    //   return timer(1000)
+    // }).then(function(res){
+    //   console.log("第二层执行结果："+res);
+    //   return timer(1000)
+    // }).then(function(res){
+    //   console.log("第三层执行结果："+res);
+    // })
+    
+
+    // function timer(ms){
+    //   return new Promise(function(resolve,reject){
+    //     setTimeout(function(){
+    //       resolve("ok")
+    //       console.log("ok");
+    //     },ms)
+    //   })
+    // }
+
+    // async function foo(){
+    //   await timer(1000);
+    //   console.log("1");
+    //   await timer(1000);
+    //   console.log("2");
+    //   await timer(1000);
+    //   console.log("3");
+    //   return "done"
+    // }
+    // foo().then(function(res){
+    //   console.log(res);
+    // });
+    // function foo(){
+    //   setTimeout(function(){console.log("ok")},1000)
+    //   console.log("1");
+    //   setTimeout(function(){console.log("ok")},1000)
+    //   console.log("2");
+    //   setTimeout(function(){console.log("ok")},1000)
+    //   console.log("3");
+    // }
+    // foo()
+
+    function timer(ms){
+      return new Promise(function(resolve,reject){
+        setTimeout(function(){
+          resolve("ok")
+          console.log("ok");
+        },ms)
+      })
+    }
+
+    async function foo(){
+      try {
+        console.log(b+1);
+        await timer(1000);
+        console.log(1);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    foo();
+    console.log("hello");
+    
+  </script>
+</body>
+</html>

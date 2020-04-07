@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("let fellow = \"10\";\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("let fellow = \"10\";\ndocument.querySelector(\"#box\").innerHTML=\"<h1>hello world</h1>\";\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

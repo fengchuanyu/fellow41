@@ -42,10 +42,23 @@ module.exports = {
             loader:"url-loader",
             options:{
               limit:500,
-              outputPath:"images/"
+              outputPath:"images/",
+              esModule:false
             }
           }
         ]
+      },
+      {
+        test:/\.(htm|html)$/,
+        loader:"html-withimg-loader"
+      },
+      {
+        test:/\.scss$/,
+        // use:["style-loader","css-loader","sass-loader"]
+        use:ExtractTextPlugin.extract({
+          use:["css-loader","sass-loader"],
+          fallback:"style-loader"
+        })
       }
     ]
   },

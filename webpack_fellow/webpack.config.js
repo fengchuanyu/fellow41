@@ -1,13 +1,16 @@
 const path = require("path");
 const HtmlPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const webpack = require("webpack");
+const glob = require("glob");
+const PurifyCSSPlugin = require("purifycss-webpack");
+const entry = require("./webpack_config/entry");
 
 module.exports = {
   mode:"development",
   //入口
-  entry:{
-    index:"./src/index.js"
-  },
+  // entry:entry,
+  entry,
   //出口
   output:{
     path:path.resolve(__dirname,"dist"),
@@ -23,7 +26,13 @@ module.exports = {
       hash:true,
       template:"./src/index.html"
     }),
-    new ExtractTextPlugin("css/main.css")
+    new ExtractTextPlugin("css/main.css"),
+    new webpack.ProvidePlugin({
+      $:"jquery"
+    }),
+    new PurifyCSSPlugin({
+      paths:glob.sync(path.join(__dirname,"./src/*.html"))
+    })
   ],
   module:{
     rules:[
@@ -32,7 +41,10 @@ module.exports = {
         // use:['style-loader','css-loader']
         use:ExtractTextPlugin.extract({
           fallback:"style-loader",
-          use:["css-loader","postcss-loader"]
+          use:[{
+            loader:"css-loader",
+            options:{importLoaders:1}
+          },"postcss-loader"]
         })
       },
       {

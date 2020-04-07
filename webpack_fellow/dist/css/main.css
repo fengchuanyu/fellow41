@@ -1,0 +1,43 @@
+.fellow {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+
+#box {
+  color: red;
+}
+
+.test-div {
+  width: 200px;
+  height: 200px;
+  background-image: url(http://127.0.0.1:8081/images/52e9fe1aa38fa5bdc4f7383e6a23f9a6.jpg);
+}
+
+::-webkit-input-placeholder {
+  color: red;
+}
+
+::-moz-placeholder {
+  color: red;
+}
+
+:-ms-input-placeholder {
+  color: red;
+}
+
+::-ms-input-placeholder {
+  color: red;
+}
+
+::placeholder {
+  color: red;
+}
+
+.test-text {
+  color: blue;
+}
+
+.div1 {
+  color: red;
+}

@@ -1,0 +1,8 @@
+#box{
+  color: red;
+}
+.test-div{
+  width: 200px;
+  height: 200px;
+  background-image: url("../image/slider3.jpg");
+}

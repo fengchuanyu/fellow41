@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- <span class="span1" v-if="num>0">num是一个大于0的数字</span>
+    <span class="span2" v-else-if="num<0">num是一个小于0的数字</span>
+    <span class="span3" v-else>num是一个等于0的数字</span> -->
+    <br/>
+    <span class="span4" v-if="isShow">hello world</span>
+    <br/>
+    <span class="span5" v-show="isShow">fellow41</span>
+  </div>
+  <!-- <div id="app2">{{num}}</div> -->
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        num:10,
+        isShow:true
+      },
+    })
+
+    // new Vue({
+    //   el:"#app2",
+    //   data:{
+    //     num:10
+    //   }
+    // })
+  </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+   <ul>
+     <li v-for="(item,index) in students">
+       编号:{{index}}
+       学生姓名：{{item.name}}
+       学生年龄：{{item.age}}
+       所在学校：{{item.school}}
+     </li>
+     <li v-for="val in arr">
+       {{val}}
+     </li>
+     <li v-for="(val,key) in obj">
+       {{key}}{{val}}
+     </li>
+   </ul>
+  </div>
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        obj:{
+          name:"小a",
+          age:18,
+          school:"林大"
+        },
+        arr:[1,2,3,4],
+        students:[
+         {
+           name:"小a",
+           age:18,
+           school:"林大"
+         },
+         {
+           name:"小b",
+           age:16,
+           school:"黑大"
+         },
+         {
+           name:"小c",
+           age:17,
+           school:"农大"
+         },
+         {
+           name:"小d",
+           age:19,
+           school:"理工"
+         },
+         {
+           name:"小e",
+           age:15,
+           school:"林大"
+         }
+       ]
+      }
+    })
+  </script>
+</body>
+</html>

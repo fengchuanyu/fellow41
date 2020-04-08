@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+  
+</head>
+<body>
+  <div id="app">
+    <input type="text" v-model="val">
+    <h1>{{val}}</h1>
+    <select name="" id="" v-model="selVal">
+      <option value="林大">林大</option>
+      <option value="黑大">黑大</option>
+      <option value="农大">农大</option>
+      <option value="理工">理工</option>
+    </select>
+    <h1>{{selVal}}</h1>
+    <input v-model="hobby" value="羽毛球" type="checkbox" name="hobby">羽毛球
+    <input v-model="hobby" value="篮球" type="checkbox" name="hobby">篮球
+    <input v-model="hobby" value="足球" type="checkbox" name="hobby">足球
+    <input v-model="hobby" value="排球" type="checkbox" name="hobby">排球
+    <input v-model="hobby" value="乒乓球" type="checkbox" name="hobby">乒乓球
+    <h1>{{hobby}}</h1>
+    <input v-model="sex" type="radio" value="男" name="sex">男
+    <input v-model="sex" type="radio" value="女" name="sex">女
+    <h1>{{sex}}</h1>
+    <input type="text" v-model="inpVal">
+    <input type="text" v-model.lazy="inpVal">
+    <input type="text" v-model.number="inpVal">
+    <input type="text" v-model.trim="inpVal">
+    <h1>{{inpVal}}</h1>
+  </div>
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        inpVal:"",
+        val:"hello",
+        selVal:"农大",
+        hobby:[],
+        sex:"男"
+      },
+      methods: {
+       
+      }
+    })
+  </script>
+</body>
+</html>

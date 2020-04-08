@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="./js/vue.js"></script>
+  <style>
+    .container {
+      padding-top: 100px;
+    }
+
+    .form-inline {
+      margin-bottom: 20px;
+    }
+
+    .active {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="app">
+    <form class="form-inline">
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" v-model="searchVal"  class="form-control" placeholder="搜索名称">
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary" v-on:click="searchHandle">搜索</button>
+    </form>
+    <form class="form-inline">
+      <div class="form-group">
+        <label for="exampleInputName2">商品名称</label>
+        <input v-model="goodsName" type="text" class="form-control" id="exampleInputName2" placeholder="请输入商品名称">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail2">商品价格</label>
+        <input v-model="goodsPrice" class="form-control" id="exampleInputEmail2" placeholder="请输入商品价格">
+      </div>
+      <button type="button" class="btn btn-default" @click="addHandle">添加</button>
+    </form>
+    <div>
+
+      <table class="table table-condensed">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>商品名称</th>
+            <th>商品价格</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in dataList">
+            <th scope="row">
+              <input type="checkbox" name="goods">
+            </th>
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+            <td><button type="button" class="btn btn-primary btn-xs">删除</button></td>
+          </tr>
+          <tr>
+            <td colspan="2">总价</td>
+            <td> 0</td>
+            <td><button type="button" class="btn btn-primary btn-xs">删除选中</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        searchVal:"",
+        goodsName:"",
+        goodsPrice:0,
+        dataList:[
+          {
+            id:1001,
+            name:"衣服",
+            price:100
+          },
+          {
+            id:1002,
+            name:"帽子",
+            price:200
+          },
+          {
+            id:1003,
+            name:"鞋",
+            price:500
+          },
+          {
+            id:1004,
+            name:"裤子",
+            price:300
+          }
+        ]
+      },
+      methods: {
+        //添加功能
+        addHandle(){
+          let newGoods = {
+            id:++(this.dataList[this.dataList.length-1].id),
+            name:this.goodsName,
+            price:this.goodsPrice
+          }
+          this.dataList.push(newGoods);
+        },
+        //搜索功能
+        searchHandle(){
+          // let _this = this;
+          // let newArr = [];
+          // newArr = this.dataList.filter(function(val,index,arr){
+          //   if(val.name.includes(_this.searchVal)){
+          //     return val;
+          //   }
+          // })
+          // console.log(newArr);
+
+          let newArr = [];
+          newArr = this.dataList.filter((val,index,arr)=>{
+            if(val.name.includes(this.searchVal)){
+              return val;
+            }
+          })
+          this.dataList = newArr;
+        } 
+      }
+    })
+  </script>
+</body>
+
+</html>

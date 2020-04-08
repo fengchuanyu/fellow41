@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+  <style>
+    .active{
+      color: red;
+    }
+    .active1{
+      font-size: 40px;
+    }
+    .box{
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- <img v-bind:src="'./image/'+imgSrc"> -->
+    <!-- <div class="box" v-bind:style="{backgroundColor:color1}"></div> -->
+    <!-- <div v-bind:class="[cName,'active1']">hello world</div> -->
+    <!-- <div v-bind:class="{active:isActive}">hello world</div> -->
+    <!-- <div v-bind:class="[{active:isActive},cName2]">hello world</div> -->
+    <div :class="cName">hello world</div>
+  </div>
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        color1:"blue",
+        imgSrc:"slider3.jpg",
+        isActive:true,
+        cName:"active",
+        cName2:"active1"
+      }
+    })
+  </script>
+</body>
+</html>

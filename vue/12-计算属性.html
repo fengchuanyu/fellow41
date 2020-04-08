@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+  
+</head>
+<body>
+  <div id="app">
+   <h1>{{i}}+{{num}}</h1>
+   <button v-on:click="addHandle">add1</button>
+   <button @click="addHandle2">add2</button>
+   <h1>当前结果总和为：{{sum}}</h1>
+   <button @click="change">change</button>
+  </div>
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        num:0,
+        i:10,
+        str:"hello"
+        // sum:10
+      },
+      methods: {
+        addHandle(){
+          this.num++;
+          // this.sum = this.i+this.num;
+        },
+        addHandle2(){
+          this.i++;
+          // this.sum = this.i+this.num;
+        },
+        change(){
+          this.str = "world";
+        }
+      },
+      computed: {
+        sum:function(){
+          console.log("computed");
+          console.log(this.str);
+          return this.i+this.num;
+        }
+      }
+    })
+  </script>
+</body>
+</html>

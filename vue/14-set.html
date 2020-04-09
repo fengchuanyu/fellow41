@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="val in arr">
+        {{val}}
+      </li>
+    </ul>
+    <div>
+      <span v-for="(val,key) in obj">{{key}}--{{val}} &nbsp;&nbsp;&nbsp;</span>
+    </div>
+    <button @click="changeHandle">change</button>
+  </div>
+  <script>
+    
+    new Vue({
+      el:"#app",
+      data:{
+        arr:[1,2,3,4,5],
+        obj:{
+          name:"小a",
+          age:20
+        }
+      },
+      methods: {
+        changeHandle(){
+          //一 当修改数组里具体某一个值的时候需要使用vue.set();
+          //二 当向对象内部添加一个新属性的时候使用vue.set();
+
+          // let newArr = ["a",1,2,3,4]
+          // this.arr[0] = "a";
+          // this.arr = newArr;
+
+          // Vue.set(this.arr,0,"a");
+
+          // this.obj.name = "小白"
+          // this.obj.school = "农大"
+          // let newObj = {
+          //   name:"小a",
+          //   age:20,
+          //   school:"农大"
+          // }
+          // this.obj = newObj;
+
+          // Vue.set(this.obj,"school","理工")
+
+          console.log(this.obj);
+          
+        }
+      },
+    })
+  </script>
+</body>
+</html>

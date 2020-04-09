@@ -58,12 +58,12 @@
             </th>
             <td>{{item.name}}</td>
             <td>{{item.price}}</td>
-            <td><button type="button" class="btn btn-primary btn-xs">删除</button></td>
+            <td><button type="button" v-on:click.stop="delHandle(item.id)" class="btn btn-primary btn-xs">删除</button></td>
           </tr>
           <tr>
             <td colspan="2">总价</td>
             <td>{{sum}}</td>
-            <td><button type="button" class="btn btn-primary btn-xs">删除选中</button></td>
+            <td><button type="button" class="btn btn-primary btn-xs" v-on:click="delCheck">删除选中</button></td>
           </tr>
         </tbody>
       </table>
@@ -77,7 +77,7 @@
         searchVal:"",
         goodsName:"",
         goodsPrice:0,
-        sum:0,
+        // sum:0,
         dataList:[
           {
             id:1001,
@@ -105,13 +105,45 @@
           }
         ]
       },
+      computed: {
+        //计算总和
+        sum(){
+          let thisSum = 0;
+          this.dataList.map(function(val){
+            if(val.isActive){
+              thisSum+=val.price
+            }
+          })
+          return thisSum;
+        }
+      },
       methods: {
+        //删除选中
+        delCheck(){
+          let newArr = [];
+          newArr = this.dataList.filter(function(val){
+            if(!val.isActive){
+              return val
+            }
+          })
+          this.dataList = newArr;
+        },
+        //删除单行
+        delHandle(id){
+          let newArr = [];
+          newArr = this.dataList.filter(function(val){
+            if(val.id!=id){
+              return val
+            }
+          })
+          this.dataList = newArr;
+        },
         //当行选中
         checkLine(id){
           console.log(id);
           let newArr = [];
 
-          this.sum = 0;
+          // this.sum = 0;
 
           newArr = this.dataList.filter((val)=>{
             if(val.id == id){
@@ -119,9 +151,9 @@
             }
 
             //计算商品总和
-            if(val.isActive){
-              this.sum+=val.price
-            }
+            // if(val.isActive){
+            //   this.sum+=val.price
+            // }
 
             return val;
           })

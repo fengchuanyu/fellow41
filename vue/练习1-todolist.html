@@ -17,10 +17,6 @@
     .form-inline {
       margin-bottom: 20px;
     }
-
-    .active {
-      background-color: red;
-    }
   </style>
 </head>
 <body>
@@ -56,9 +52,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="item in dataList">
+          <tr v-bind:class="{active:item.isActive}" v-on:click="checkLine(item.id)" v-for="item in dataList">
             <th scope="row">
-              <input type="checkbox" name="goods">
+              <input type="checkbox" name="goods" :checked="item.isActive">
             </th>
             <td>{{item.name}}</td>
             <td>{{item.price}}</td>
@@ -66,7 +62,7 @@
           </tr>
           <tr>
             <td colspan="2">总价</td>
-            <td> 0</td>
+            <td>{{sum}}</td>
             <td><button type="button" class="btn btn-primary btn-xs">删除选中</button></td>
           </tr>
         </tbody>
@@ -81,30 +77,58 @@
         searchVal:"",
         goodsName:"",
         goodsPrice:0,
+        sum:0,
         dataList:[
           {
             id:1001,
             name:"衣服",
-            price:100
+            price:100,
+            isActive:false
           },
           {
             id:1002,
             name:"帽子",
-            price:200
+            price:200,
+            isActive:false
           },
           {
             id:1003,
             name:"鞋",
-            price:500
+            price:500,
+            isActive:false
           },
           {
             id:1004,
             name:"裤子",
-            price:300
+            price:300,
+            isActive:false
           }
         ]
       },
       methods: {
+        //当行选中
+        checkLine(id){
+          console.log(id);
+          let newArr = [];
+
+          this.sum = 0;
+
+          newArr = this.dataList.filter((val)=>{
+            if(val.id == id){
+              val.isActive = !val.isActive;
+            }
+
+            //计算商品总和
+            if(val.isActive){
+              this.sum+=val.price
+            }
+
+            return val;
+          })
+          
+          
+
+        },
         //添加功能
         addHandle(){
           let newGoods = {

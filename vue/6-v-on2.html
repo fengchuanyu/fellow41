@@ -27,7 +27,7 @@
 <body>
   <div id="app">
     <div class="div1" @click="addHanle1">
-      <div class="div2" v-on:click="addHanle2('hello',$event)">
+      <div class="div2" v-on:click="addHanle2('a','hello',$event)">
         <div class="div3" v-on:click.stop="addHanle3"></div>
       </div>
     </div>
@@ -41,8 +41,9 @@
         addHanle1(){
           console.log("div1");
         },
-        addHanle2(i,e){
+        addHanle2(k,i,e){
           console.log("div2");
+          console.log(k,i);
           console.log(e);
           e.stopPropagation();
         },

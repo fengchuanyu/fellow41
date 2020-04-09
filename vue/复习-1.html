@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    {{num}}
+    <!-- <input type="text" v-model="inpVal" >
+    <input v-model="checkVal" type="checkbox" name="" value="足球1">足球
+    <input v-model="checkVal" type="checkbox" name="" value="篮球1">篮球 -->
+  </div>
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        num:0,
+        inpVal:"",
+        checkVal:[]
+      }
+    })  
+
+
+    function foo(a,b){
+      console.log(a,b);
+      
+    }
+    foo("hello",2)
+  </script>
+</body>
+</html>

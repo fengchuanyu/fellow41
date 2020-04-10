@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+   <fellow str2="你好" v-bind:str="a"></fellow>
+   <fellow str2="再见" v-bind:str="b"></fellow>
+   <hello-wordl></hello-wordl>
+  </div>
+  
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        a:"hello",
+        b:"world"
+      },
+      components:{
+        helloWordl:{
+          template:"<h1>你好</h1>"
+        },
+        fellow:{
+          props:["str","str2"],
+          template:`
+            <div>
+              <h1>{{str2}}fellow41{{str}}</h1>  
+            </div>
+          `
+        }
+      }
+    })
+
+    // function foo(str){
+    //   console.log("fellow41"+str);
+    // }
+    // foo("hello");
+    // foo("world");
+  </script>
+</body>
+</html>

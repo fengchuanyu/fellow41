@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <fellow></fellow>
+    <hello></hello>
+    <fellow></fellow>
+  </div>
+  <div id="box">
+    <hello></hello>
+  </div>
+  <script>
+    Vue.component("hello",{
+      // template:"<div><h1>fellow41</h1><h1>hello world!</h1></div>"
+      template:`
+      <div>
+        <div>hello</div>
+        <div>world</div>
+      </div>
+      `
+    })
+  
+    new Vue({
+      el:"#app",
+      components:{
+        fellow:{
+          template:`
+            <div>
+              <h1>fellow41</h1>  
+            </div>
+          `
+        }
+      }
+    })
+    new Vue({
+      el:"#box"
+    })
+  </script>
+</body>
+</html>

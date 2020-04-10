@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <com1></com1>
+    <child1></child1>
+  </div>
+  <template id="tem1">
+    <div>
+      <h1>hello world!</h1>
+      <com2></com2>
+    </div>
+  </template>
+  <template id="tem2">
+    <div>
+      <h1>你好世界！</h1>
+    </div>
+  </template>
+  <template id="tem3">
+    <div>
+      <h1>子组件1</h1>
+      <child2></child2>
+    </div>
+  </template>
+  <template id="tem4">
+    <div>
+      <h1>子组件2</h1>
+    </div>
+  </template>
+  <script>
+    Vue.component("com1", {
+      template: "#tem1"
+    })
+    Vue.component("com2", {
+      template: "#tem2"
+    })
+    new Vue({
+      el: "#app",
+      data: {
+
+      },
+      components: {
+        child1: {
+          template:"#tem3",
+          components:{
+            child2:{
+              template:"#tem4"
+            }
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

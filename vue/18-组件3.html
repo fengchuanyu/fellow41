@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>父组件中的名字:{{uName}}</h1>
+   <fellow :username="uName" v-on:childchangename="parentChangeName"></fellow>
+   <button @click="changeUname">父组件修改名字</button>
+   <fellow2 :username.sync="uName"></fellow2>
+  </div>
+  
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        uName:"小明"
+      },
+      methods: {
+        changeUname(){
+          this.uName = "小刚"
+        },
+        parentChangeName(newName){
+          this.uName = newName;
+        }
+      },
+      components:{
+        fellow2:{
+          props:["username"],
+          template:`
+          <div>
+              <h1>我的名字是:{{username}}</h1> 
+              <button @click="changeUserName">fellow2子组件修改名字</button> 
+            </div>
+          `,
+          methods: {
+            changeUserName(){
+              this.$emit('update:username',"小红")
+            } 
+          }
+        },
+        fellow:{
+          props:["username"],
+          template:`
+            <div>
+              <h1>我的名字是:{{username}}</h1> 
+              <button @click="changeUserName">子组件修改名字</button> 
+            </div>
+          `,
+          methods: {
+            changeUserName(){
+              // console.log(this.username);
+              // this.username = "aa"
+              this.$emit("childchangename","小刚");
+            } 
+          }
+        }
+      }
+    })
+
+    // function foo(str){
+    //   console.log("fellow41"+str);
+    // }
+    // foo("hello");
+    // foo("world");
+  </script>
+</body>
+</html>

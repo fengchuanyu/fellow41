@@ -17,6 +17,14 @@ export default {
       ++this.num
     }
   },
+  beforeRouteEnter (to, from, next) {
+    console.log(to,from)
+    next()
+  },
+  beforeRouteLeave (to, from, next) {
+    console.log(to,from)
+    next()
+  }
 }
 </script>
 <style scoped>

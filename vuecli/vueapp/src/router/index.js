@@ -19,7 +19,11 @@ Vue.use(VueRouter)
   {
     path: '/page1',
     name: 'Page1',
-    component: () => import('../views/Page1.vue')
+    component: () => import('../views/Page1.vue'),
+    // beforeEnter: (to, from,next) => {
+    //   console.log(to,from);
+    //   next();
+    // }
   },
   {
     path: '/page2',

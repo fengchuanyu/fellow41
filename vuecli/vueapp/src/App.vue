@@ -5,12 +5,13 @@
       <router-link to="/about">About</router-link>|
       <router-link to="/page1">Page1</router-link>|
       <router-link to="/page2">Page2</router-link>|
+      <router-link to="/page3">Page3</router-link>|
       <router-link to="/aboutpage">别名</router-link>|
       <router-link to="/backhome">返回首页</router-link>|
       <span @click="goPage1">编程式导航-page1</span>|
       <span @click="goBack">返回</span>｜
       <span @click="goFoward">向前</span>
-      
+
     </div>
     <div class="box">
       <transition name="fade">

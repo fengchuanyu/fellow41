@@ -43,6 +43,11 @@ Vue.use(VueRouter)
     ]
   },
   {
+    path: '/page3',
+    name: 'Page3',
+    component: () => import('../views/Page3.vue')
+  },
+  {
     path: '/backhome',
     redirect:"/"
   },

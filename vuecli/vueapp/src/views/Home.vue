@@ -2,6 +2,7 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <div class="active">你好</div>
+    <h1>{{$route.params.id}}</h1>
   </div>
 </template>
 

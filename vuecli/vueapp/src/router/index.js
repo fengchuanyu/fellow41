@@ -13,7 +13,8 @@ Vue.use(VueRouter)
   {
     path: '/about',
     name: 'About',
-    component: () => import('../views/About.vue')
+    component: () => import('../views/About.vue'),
+    alias:"/aboutpage"
   },
   {
     path: '/page1',
@@ -36,11 +37,19 @@ Vue.use(VueRouter)
         component: () => import('../views/Child2.vue')
       },
     ]
+  },
+  {
+    path: '/backhome',
+    redirect:"/"
+  },
+  {
+    path: '*',
+    component: () => import('../views/Error.vue')
   }
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes
 })

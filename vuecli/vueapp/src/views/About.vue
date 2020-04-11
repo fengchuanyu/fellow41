@@ -6,7 +6,7 @@
   </div>
 </template>
 <script>
-import Com1 from "../components/Com1.vue"
+import Com1 from "../components/TestCom1.vue"
 export default {
   data() {
     return {

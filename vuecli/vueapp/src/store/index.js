@@ -13,7 +13,15 @@ export default new Vuex.Store({
       state.num+=1;
     }
   },
+  getters:{
+    sum(state){
+      return state.num+100
+    }
+  },
   actions: {
+    addAction({commit}){
+      commit("add")
+    }
   },
   modules: {
   }

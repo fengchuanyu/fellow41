@@ -10,6 +10,7 @@
       <span @click="goPage1">编程式导航-page1</span>|
       <span @click="goBack">返回</span>｜
       <span @click="goFoward">向前</span>
+      
     </div>
     <div class="box">
       <transition name="fade">

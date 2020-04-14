@@ -7,7 +7,7 @@
     <h3>num:{{num}}</h3>
     <!-- <button @click="$store.commit('add')">add</button> -->
     <!-- <button @click="addHandle">add</button> -->
-    <button @click="vuexAdd">add</button>
+    <button @click="vuexAdd(10)">add</button>
     <!-- <button @click="$store.dispatch('addAction')">addAction</button> -->
     <button @click="addAction">addAction</button>
 

@@ -3,14 +3,14 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+const modalA = {
   state: {
     str:"hello fellow41",
     num:0
   },
   mutations: {
-    add(state){
-      state.num+=1;
+    add(state,i){
+      state.num+=i;
     }
   },
   getters:{
@@ -20,9 +20,20 @@ export default new Vuex.Store({
   },
   actions: {
     addAction({commit}){
-      commit("add")
+      commit("add",10)
     }
-  },
+  }
+}
+
+const modalB = {
+  state:{
+    num:123
+  }
+}
+
+export default new Vuex.Store({
   modules: {
+    a:modalA,
+    b:modalB
   }
 })

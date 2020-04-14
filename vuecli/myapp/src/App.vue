@@ -1,20 +1,16 @@
 <template>
   <div id="app">
-    <test-com></test-com>
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>|
-      <router-link to="/tv">Tv</router-link>
+    <Navagation/>
+    <div class="content">
+      <router-view/>
     </div>
-    <router-view/>
-    
   </div>
 </template>
 <script>
-import TestCom from '@/components/TestCom.vue'
+import Navagation from '@/components/Navagation.vue'
 export default {
   components:{
-    TestCom
+    Navagation
   }
 }
 </script>
@@ -25,5 +21,8 @@ export default {
 }
 li{
   list-style: none;
+}
+body{
+  padding:1rem 0;
 }
 </style>

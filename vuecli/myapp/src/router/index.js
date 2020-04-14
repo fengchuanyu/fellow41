@@ -1,24 +1,28 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
   const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: () => import('../views/About.vue')
-  },
-  {
-    path: '/tv',
     name: 'Tv',
     component: () => import('../views/tv/Tv.vue')
+  },{
+    path: '/book',
+    name: 'Book',
+    component: () => import('../views/book/Book.vue'),
+    // beforeEnter: (to, from, next) => {
+    //   console.log(to,from,next)
+    // }
+  },{
+    path: '/music',
+    name: 'Music',
+    component: () => import('../views/music/Music.vue')
+  },{
+    path: '/talk',
+    name: 'Talk',
+    component: () => import('../views/talk/Talk.vue')
   }
 ]
 

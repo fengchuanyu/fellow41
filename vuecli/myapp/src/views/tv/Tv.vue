@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <ul>
-      <li v-for="item in dataList" :key="item.id">
+      <li @click="goDetail(item.id)" v-for="item in dataList" :key="item.id">
         <div class="left">
           <img :src="item.cover.url" alt="">
         </div>
@@ -29,6 +29,10 @@ export default {
     this.listenScroll();
   },
   methods: {
+    //跳转至详情页面
+    goDetail(id){
+      this.$router.push("/tvdetail/"+id)
+    },
     //给window绑定滚动事件
     listenScroll(){
       let htmlDom = document.documentElement;//获取html元素

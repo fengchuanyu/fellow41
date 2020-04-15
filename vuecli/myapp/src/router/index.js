@@ -24,6 +24,11 @@ Vue.use(VueRouter)
     name: 'Talk',
     component: () => import('../views/talk/Talk.vue')
   }
+  ,{
+    path: '/tvdetail/:id',
+    name: 'TvDeatil',
+    component: () => import('../views/tv/TvDetail.vue')
+  }
 ]
 
 const router = new VueRouter({

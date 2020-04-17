@@ -23,8 +23,10 @@ wx:key="index">
   <view>年龄：{{age}}</view>
 </template> -->
 <import src="./tem.wxml"/>
-<view wx:for="{{objArr}}">
+<view wx:for="{{objArr}}" wx:key="index">
   <template is="tem1" data="{{...item}}"></template>
 </view>
 
 <template is="tem1" data="{{name:'aaaa',age:22}}"></template>
+
+<button bindtap="goPageOne" size="default" type="primary">pageone</button>

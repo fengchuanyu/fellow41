@@ -1,1 +1,30 @@
-hello world
+<!-- {{str}}
+<view wx:for="{{arr}}" 
+wx:for-item="itemName" 
+wx:key="index">
+  {{itemName}}---{{index}}
+</view>
+<view wx:if="{{num>0}}">num大于0</view>
+<view wx:elif="{{num<0}}">num小于0</view>
+<view wx:else>num等于0</view> -->
+
+<!-- <view wx:for="{{objArr}}">
+  <view>姓名：{{item.name}}</view>
+  <view>年龄：{{item.age}}</view>
+</view> -->
+
+<!-- <block wx:for="{{objArr}}">
+  <view>姓名：{{item.name}}</view>
+  <view>年龄：{{item.age}}</view>
+</block> -->
+
+<!-- <template name="tem1">
+  <view>姓名：{{name}}</view>
+  <view>年龄：{{age}}</view>
+</template> -->
+<import src="./tem.wxml"/>
+<view wx:for="{{objArr}}">
+  <template is="tem1" data="{{...item}}"></template>
+</view>
+
+<template is="tem1" data="{{name:'aaaa',age:22}}"></template>

@@ -5,7 +5,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    str:"hello fellow41",
+    arr:['a','b','c','d','e'],
+    num:0,
+    objArr:[
+      {
+        name:"小a",
+        age:18
+      },
+      {
+        name:"小b",
+        age:19
+      },
+      {
+        name:"小c",
+        age:16
+      },
+      {
+        name:"小d",
+        age:17
+      }
+    ]
   },
 
   /**

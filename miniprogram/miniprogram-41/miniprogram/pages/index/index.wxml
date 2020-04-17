@@ -30,3 +30,5 @@ wx:key="index">
 <template is="tem1" data="{{name:'aaaa',age:22}}"></template>
 
 <button bindtap="goPageOne" size="default" type="primary">pageone</button>
+
+<view class="box"></view>

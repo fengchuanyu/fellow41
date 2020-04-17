@@ -5,14 +5,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    num:0
   },
-
+  addHandle(e){
+    console.log(e.target.id,e.target.dataset.step);
+    let thisStep = Number.parseInt(e.target.dataset.step)
+    this.setData({
+      num:this.data.num+thisStep
+    })
+  },
+  tapHandle1(){
+    console.log("box1");
+  },
+  tapHandle2(){
+    console.log("box2");
+  },
+  tapHandle3(){
+    console.log("box3");
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options);
   },
 
   /**

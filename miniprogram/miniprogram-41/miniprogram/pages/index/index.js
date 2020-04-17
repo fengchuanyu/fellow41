@@ -29,7 +29,7 @@ Page({
   },
   goPageOne(){
     wx.navigateTo({
-      url: '../page_one/page_one',
+      url: '../page_one/page_one?id=fellow41',
     })  
   },
   /**

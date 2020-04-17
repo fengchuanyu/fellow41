@@ -1,1 +1,8 @@
-pageOne
+{{num}}
+<button id="testBtn" data-step="10" bindtap="addHandle" type="primary">add</button>
+
+<view class="box1" bindtap="tapHandle1">
+ <view class="box2" bindtap="tapHandle2">
+  <view class="box3" catchtap="tapHandle3"></view>
+ </view>
+</view>

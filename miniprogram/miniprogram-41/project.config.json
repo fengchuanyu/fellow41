@@ -14,6 +14,7 @@
 	"libVersion": "2.10.4",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -54,6 +55,13 @@
 					"id": -1,
 					"name": "page_two",
 					"pathName": "pages/page_two/page_two",
+					"query": "id=fellow41",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "page_three",
+					"pathName": "pages/page_three/page_three",
 					"query": "id=fellow41",
 					"scene": null
 				}

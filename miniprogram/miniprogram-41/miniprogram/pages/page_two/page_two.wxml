@@ -1,2 +1,3 @@
 <input bindinput="getInpVal"/>
 <button type="primary" bindtap="addHandle">添加</button>
+<button type="primary" bindtap="getHandle">获取数据</button>

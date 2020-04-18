@@ -1,5 +1,6 @@
 const db = wx.cloud.database();//初始化数据库
 const fellowDb = db.collection("fellow_db");//获取数据库中某个集合
+const _ = db.command //定义查询指令
 Page({
 
   /**
@@ -19,11 +20,36 @@ Page({
     fellowDb.add({
       data:{
         inpVal:this.data.inpVal,
-        isDone:false
+        isDone:true
       }
     }).then((res)=>{
       console.log(res);
     })
+  },
+  //获取数据
+  getHandle(){
+    //获取集合中的全部数据
+    // fellowDb.get().then((res)=>{
+    //   console.log(res);
+    // })
+    //获取集合中的部分数据（isDone 为 true 的数据）
+    // fellowDb.where({
+    //   isDone:true
+    // }).get().then((res)=>{
+    //   console.log(res);
+    // })
+
+    //获取集合中的部分数据利用指令（inpVal 中 等于 你好和1221212 数据）
+    fellowDb.where({
+      inpVal:_.in(["你好","1221212"])
+    }).get().then((res)=>{
+      console.log(res);
+    })
+
+    //获取具体某一条记录 (根据id)
+    // fellowDb.doc("0d9cdb685e9a67d20051328c4e6a850a").get().then((res)=>{
+    //   console.log(res);
+    // })
   },
   /**
    * 生命周期函数--监听页面加载

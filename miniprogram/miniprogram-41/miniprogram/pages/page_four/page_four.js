@@ -7,13 +7,34 @@ Page({
    */
   data: {
     inpVal:"",
-    todoList:[]
+    todoList:[],
+    isDone:true
+  },
+  //切换列表状态（完成或未完成）
+  switchDone(e){
+    this.setData({
+      isDone:e.detail.value
+    })
+    this.getTodoList();
   },
   //获取文本框中的值
   saveInfo(e){
     this.setData({
       inpVal:e.detail.value
     })
+  },
+
+  //标记完成
+  setDone(e){
+    let thisId = e.target.dataset.id;
+    todos.doc(thisId).update({
+      data:{
+        isDone:true
+      }
+    }).then((res)=>{
+      this.getTodoList();
+    })
+    
   },
   //添加待办事项
   addHandle(){
@@ -39,8 +60,9 @@ Page({
     wx.showLoading({
       title: '加载中...',
     })
-    todos.get().then((res)=>{
-      console.log(res);
+    todos.where({
+      isDone:this.data.isDone
+    }).get().then((res)=>{
       this.setData({
         todoList:res.data
       })

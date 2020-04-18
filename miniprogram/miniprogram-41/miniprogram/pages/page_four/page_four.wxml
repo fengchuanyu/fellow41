@@ -1,0 +1,15 @@
+<input bindinput="saveInfo" placeholder="请输入待办事项" />
+<button type="primary" bindtap="addHandle">添加</button>
+
+<view class="todo_list">
+ <view class="todo_index">序号</view>
+ <view class="todo_title">待办事项</view>
+ <view class="todo_control">操作</view>
+</view>
+<view class="todo_list" wx:for="{{todoList}}" wx:key="_id">
+ <view class="todo_index">{{index+1}}</view>
+ <view class="todo_title">{{item.title}}</view>
+ <view class="todo_control">
+  <button size="mini" type="primary">完成</button>
+ </view>
+</view>

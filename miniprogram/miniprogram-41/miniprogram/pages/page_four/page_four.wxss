@@ -1,0 +1,17 @@
+.todo_list{
+  display: flex;
+  padding:5px;
+  border-bottom: 1px solid #ddd;
+}
+.todo_list .todo_index{
+  flex-grow: 1;
+  width: 0;
+}
+.todo_list .todo_title{
+  flex-grow: 3;
+  width: 0;
+}
+.todo_list .todo_control{
+  flex-grow: 1;
+  width: 0;
+}

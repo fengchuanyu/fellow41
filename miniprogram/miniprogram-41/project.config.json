@@ -49,6 +49,13 @@
 					"pathName": "pages/page_one/page_one",
 					"query": "id=fellow41",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "page_two",
+					"pathName": "pages/page_two/page_two",
+					"query": "id=fellow41",
+					"scene": null
 				}
 			]
 		}

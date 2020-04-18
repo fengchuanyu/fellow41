@@ -1,0 +1,2 @@
+<input bindinput="getInpVal"/>
+<button type="primary" bindtap="addHandle">添加</button>

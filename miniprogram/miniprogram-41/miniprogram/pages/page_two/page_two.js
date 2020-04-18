@@ -51,6 +51,37 @@ Page({
     //   console.log(res);
     // })
   },
+  //更新数据
+  updateHandle(){
+    // fellowDb.doc("0d9cdb685e9a67d20051328c4e6a850a").update({
+    //   data:{
+    //     isDone:false
+    //   }
+    // }).then((res)=>{
+    //   console.log(res);
+    // })
+
+    // fellowDb.doc("0d9cdb685e9a67d20051328c4e6a850a").update({
+    //   data:{
+    //     like:_.inc(1)
+    //   }
+    // }).then((res)=>{
+    //   console.log(res);
+    // })
+    fellowDb.doc("0d9cdb685e9a67d20051328c4e6a850a").update({
+      data:{
+        arr:_.push("hello")
+      }
+    }).then((res)=>{
+      console.log(res);
+    })
+  },
+  //删除
+  deleteHandle(){
+    fellowDb.doc("f149f6775e9a603e005b7a0f29123ad6").remove().then((res)=>{
+      console.log(res);
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

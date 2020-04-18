@@ -1,3 +1,5 @@
 <input bindinput="getInpVal"/>
 <button type="primary" bindtap="addHandle">添加</button>
 <button type="primary" bindtap="getHandle">获取数据</button>
+<button type="primary" bindtap="updateHandle">更新</button>
+<button type="primary" bindtap="deleteHandle">删除</button>

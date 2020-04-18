@@ -1,1 +1,3 @@
 <button type="primary" bindtap="callFellow">调用云函数</button>
+<button type="primary" bindtap="getCloudFunc">云函数获取数据</button>
+<button type="primary" bindtap="updateCloudFunc">云函数修改数据</button>

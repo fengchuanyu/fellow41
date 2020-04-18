@@ -1,4 +1,3 @@
-// miniprogram/pages/page_three/page_three.js
 Page({
 
   /**
@@ -14,6 +13,20 @@ Page({
         a:1,
         b:2
       }
+    }).then((res)=>{
+      console.log(res);
+    })
+  },
+  getCloudFunc(){
+    wx.cloud.callFunction({
+      name:"fellow41_db"
+    }).then((res)=>{
+      console.log(res);
+    })
+  },
+  updateCloudFunc(){
+    wx.cloud.callFunction({
+      name:"fellow41_update"
     }).then((res)=>{
       console.log(res);
     })

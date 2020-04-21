@@ -10,11 +10,19 @@
  <view class="todo_title">待办事项</view>
  <view class="todo_control">操作</view>
 </view>
+
+<checkbox-group bindchange="checkboxChange">
 <view class="todo_list" wx:for="{{todoList}}" wx:key="_id">
- <view class="todo_index">{{index+1}}</view>
+ <view class="todo_index">
+  <checkbox value="{{item._id}}" />
+ </view>
  <view class="todo_title">{{item.title}}</view>
  <view class="todo_control">
   <button wx:if="{{item.isDone}}" size="mini" type="warn">删除</button>
   <button wx:else size="mini" data-id="{{item._id}}" bindtap="setDone" type="primary">完成</button>
  </view>
 </view>
+</checkbox-group>
+
+<button bindtap="delCheck" wx:if="{{isDone}}" type="warn">标记删除</button>
+<button bindtap="doneCheck"  wx:else type="primary">标记完成</button>

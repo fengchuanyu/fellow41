@@ -68,7 +68,9 @@ export default {
       return str;
     },
     //发送聊天信息
-    sendMessage() {
+    sendMessage(
+      
+    ) {
       let requestUrl = "https://api.ai.qq.com/fcgi-bin/nlp/nlp_textchat";
       let baseUrl = "https://bird.ioliu.cn/v2?url=";
       let params = {

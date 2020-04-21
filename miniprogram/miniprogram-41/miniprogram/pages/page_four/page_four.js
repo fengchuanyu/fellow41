@@ -8,7 +8,38 @@ Page({
   data: {
     inpVal:"",
     todoList:[],
-    isDone:true
+    isDone:false,
+    checkItems:[]
+  },
+  //标记删除
+  delCheck(){
+    let thisIds = this.data.checkItems;
+    wx.cloud.callFunction({
+      name:"dbdelete",
+      data:{
+        id:thisIds
+      }
+    }).then((res)=>{
+      this.getTodoList();
+    })
+  },
+  //标记完成事件
+  doneCheck(){
+    let thisIds = this.data.checkItems;
+    wx.cloud.callFunction({
+      name:"dbupdate",
+      data:{
+        id:thisIds
+      }
+    }).then((res)=>{
+      this.getTodoList();
+    })
+  },
+  //复选框点选中
+  checkboxChange(e){
+    this.setData({
+      checkItems:e.detail.value
+    })
   },
   //切换列表状态（完成或未完成）
   switchDone(e){

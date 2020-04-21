@@ -2,3 +2,7 @@
 <text class="active">组件一</text>
 <slot name="slot2"></slot>
 <view>{{str}}</view>
+<button bindtap="btnHandle" tyep="primary">按钮</button>
+<view>{{num}}</view>
+<button type="primary" bindtap="addHandle">add</button>
+<view>{{obj.name}}</view>

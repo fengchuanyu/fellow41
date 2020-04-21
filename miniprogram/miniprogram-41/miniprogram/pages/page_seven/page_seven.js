@@ -5,9 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    str1:"fellow"
+    str1:"fellow",
+    isShow:true
   },
-
+  changHandle(){
+    this.setData({
+      isShow:false
+    })
+  },
+  showVal(val){
+    console.log(val);
+  },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -1,5 +1,9 @@
 <view class="active">页面七</view>
-<com-one str="{{str1}}">
-  <view slot="slot1">hello</view>
-  <view slot="slot2">world</view>
-</com-one>
+<block wx:if="{{isShow}}">
+	<com-one str="{{str1}}" bind:myevent="showVal">
+		<view slot="slot1">hello</view>
+		<view slot="slot2">world</view>
+	</com-one>
+</block>
+
+<button bindtap="changHandle">change</button>

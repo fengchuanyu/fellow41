@@ -5,7 +5,8 @@
     "pages/page_two/page_two",
     "pages/page_three/page_three",
     "pages/page_four/page_four",
-    "pages/page_five/page_five"
+    "pages/page_five/page_five",
+    "pages/page_six/page_six"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -32,6 +33,5 @@
       }
     ]
   },
-  "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "sitemapLocation": "sitemap.json"
 }

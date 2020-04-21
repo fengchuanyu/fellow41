@@ -6,7 +6,8 @@
     "pages/page_three/page_three",
     "pages/page_four/page_four",
     "pages/page_five/page_five",
-    "pages/page_six/page_six"
+    "pages/page_six/page_six",
+    "pages/page_seven/page_seven"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

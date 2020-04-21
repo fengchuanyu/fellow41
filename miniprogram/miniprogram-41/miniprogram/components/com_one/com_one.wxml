@@ -1,0 +1,4 @@
+<slot name="slot1"></slot>
+<text class="active">组件一</text>
+<slot name="slot2"></slot>
+<view>{{str}}</view>

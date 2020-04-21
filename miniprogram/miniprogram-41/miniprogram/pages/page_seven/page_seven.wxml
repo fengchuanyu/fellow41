@@ -1,0 +1,5 @@
+<view class="active">页面七</view>
+<com-one str="{{str1}}">
+  <view slot="slot1">hello</view>
+  <view slot="slot2">world</view>
+</com-one>

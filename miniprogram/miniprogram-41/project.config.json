@@ -97,6 +97,13 @@
 					"id": -1,
 					"name": "page_six",
 					"pathName": "pages/page_six/page_six",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "page_seven",
+					"pathName": "pages/page_seven/page_seven",
 					"scene": null
 				}
 			]

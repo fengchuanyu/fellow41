@@ -12,6 +12,14 @@ const router = new Router({
   prefix:'/fellow'
 })
 
+//小程序初始化
+cloud.init({
+  secretId:"AKIDc3Eh5OUVLUQ7yfpOVLzxgVM0QZRvmF4u",
+  secretKey:"mJFBvQfolqn2MSP7Z3PYxDmYmTuBzbAW",
+  env:"release-a38306"
+})
+
+
 //解决跨域问题cors
 app.use(Cors({
   orign:function(ctx){
@@ -28,7 +36,9 @@ app.use(KoaBody());
 // http://localhost:3000/fellow/user/login
 //根据路由请求匹配控制器
 let user = require('./controller/user.js');
+let student = require('./controller/student.js');
 router.use("/user",user.routes());
+router.use("/student",student.routes());
 
 //使用路由
 app.use(router.routes());

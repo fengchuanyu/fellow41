@@ -1,18 +1,43 @@
-// miniprogram/pages/index/index.js
+const db = wx.cloud.database();
+const fellowStudent = db.collection("fellow_student");
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    studentList:[]
+  },
+  getSchool(str){
+    let school = ""
+    switch(str){
+      case 'heida': school="黑大";break;
+      case 'linda': school="林大";break;
+      case 'ligong': school="理工";break;
+      case 'nongda': school="农大";break; 
+    }
+    return school;
+    
   },
 
+  getList(){
+    fellowStudent.get().then((res)=>{
+      console.log(res);
+      let thisList = [];
+      thisList = res.data.map((item)=>{
+        item.school = this.getSchool(item.school);
+        return item;
+      })
+      this.setData({
+        studentList:thisList
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getList()
   },
 
   /**

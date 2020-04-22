@@ -1,2 +1,6 @@
 <!--miniprogram/pages/index/index.wxml-->
 <text>miniprogram/pages/index/index.wxml</text>
+<view class="listItem" wx:for="{{studentList}}" wx:key="_id">
+  <view>姓名{{item.name}}</view>
+  <view>学校{{item.school}}</view>
+</view>
